@@ -1,0 +1,406 @@
+       TUGAS TEKNOLOGI ASISTIF
+
+GELANG ASISTIF GETAR DAN CAHAYA
+
+              Dosen Pengampu :
+
+       Ima Kurrotun Ainin, S.Pd., M.Pd.
+
+
+
+
+                Disusun oleh :
+
+No         Nama Anggota              NIM
+
+1      Ichwan Maulal Hafif       25010044112
+
+2      Nadiyya Nur Savira        25010044078
+
+3      Hawa Istiqomah            25010044099
+
+4      Yoshelyn Shalom P.        25010044115
+
+5      Ismi Nafisah              25010044119
+
+
+
+             PROGRAM STUDI
+
+         S1 PENDIDIKAN KHUSUS
+
+      FAKULTAS ILMU PENDIDIKAN
+
+     UNIVERSITAS NEGERI SURABAYA
+
+                TAHUN 2026
+A. Ringkasan Gagasan
+  Banyak informasi penting di sekitar anak disampaikan lewat bunyi: nama yang
+  dipanggil, bel sekolah, bel pintu, sampai alarm bahaya. Anak tunarungu tidak dapat
+  mengakses informasi tersebut secara langsung, sehingga sering terlambat merespons
+  atau bergantung pada orang lain untuk menepuk bahunya. Teknologi asistif yang kami
+  rancang adalah gelang yang mengubah bunyi penting menjadi dua jenis tanda: getaran
+  untuk menarik perhatian dan lampu berwarna untuk memberi tahu jenis suaranya.
+  Gelang terhubung dengan aplikasi di ponsel. Di aplikasi, orang tua atau guru masuk
+  menggunakan email, mengisi nama panggilan anak, mengatur jenis suara yang ingin
+  dideteksi, dan membuka buku panduan (guidebook) penggunaan. Literatur berikut
+  dipilih karena mendukung tiga keputusan utama dalam rancangan kami: (1) memakai
+  gelang di pergelangan tangan, (2) menggabungkan getaran dan cahaya, dan (3)
+  memakai pola getar sebagai kode.
+   a. Ringkasan Literatur
+
+     No          Sumber              Temuan utama               Relevansi untuk
+                                                                rancangan kami
+
+    1      Findlater dkk.     Survei terhadap 201 orang      Dasar utama untuk
+           (2019), konferensi Tuli dan kurang dengar:        menggabungkan
+           CHI                92% menginginkan umpan         getaran dan lampu,
+                              balik haptik (getar) dan       bukan salah satu saja.
+                              visual sekaligus; 73% sangat
+                              tertarik pada teknologi
+                              kesadaran bunyi.
+
+    2      Goodman dkk.       Studi kualitatif dengan 16     Aplikasi perlu
+           (2020), konferensi partisipan yang mencoba        pengaturan untuk
+           CHI                kombinasi visual dan getar     memilih jenis suara
+                              di jam tangan pintar;          yang aktif.
+                              pengguna meminta fitur
+                              penyaringan suara agar
+                              getaran tidak berlebihan.
+No        Sumber                Temuan utama                 Relevansi untuk
+                                                             rancangan kami
+
+3    Jain dkk. (2020),    Uji lapangan selama empat       Membuktikan bahwa
+     konferensi ISWC,     minggu dengan 12                bentuk gelang dipakai
+     perangkat "Vibes"    pengguna perangkat getar di     dan bermanfaat dalam
+                          pergelangan tangan;             kehidupan sehari-hari.
+                          kesadaran terhadap bunyi di
+                          sekitar meningkat.
+
+4    Jain dkk. (2022),    Jam tangan pintar yang          Mendukung fitur
+     Communications       mengenali jenis bunyi, diuji    pengenalan jenis suara
+     of the ACM,          dengan 8 partisipan;            dan pemrosesan suara
+     "SoundWatch"         pergelangan tangan dipilih      di ponsel.
+                          karena privasi, penerimaan
+                          sosial, serta dukungan visual
+                          dan haptik.
+
+5    Yağanoğlu &          Perangkat wearable dengan       Paling mirip dengan
+     Köse (2017),         mikrofon, motor getar, dan      komponen gelang kami
+     Applied Sciences     LED; penggunaan getaran         (motor getar dan LED).
+                          dan LED bersama membuat
+                          informasi lebih jelas
+                          ditangkap pengguna.
+
+6    Harkins dkk.         44 pengguna Tuli menilai        Dasar perancangan
+     (2010), Journal of   sinyal getar: sinyal yang       kode getar, terutama
+     Deaf Studies and     lebih panjang dan berpola       kode bahaya yang
+     Deaf Education       putus-nyambung dinilai          panjang dan berpola.
+                          lebih efektif menarik
+                          perhatian daripada getaran
+                          konstan.
+  No          Sumber                Temuan utama               Relevansi untuk
+                                                               rancangan kami
+
+ 7       RESAAW (2024), Wearable bantu dengar real-         Mendukung fitur utama
+         jurnal terbitan      time; merangkum penelitian    kami, yaitu penanda
+         IIETA                perangkat yang memberi        saat nama dipanggil.
+                              peringatan getar dan LED,
+                              termasuk ketika nama
+                              pengguna dipanggil.
+
+ 8       Scoping review,      Sistem peringatan getar       Menunjukkan celah
+         International        untuk siswa Tuli di           penelitian di
+         Journal of Special   pendidikan inklusif masih     lingkungan sekolah,
+         Education (2026)     sedikit diteliti; perangkat   sasaran produk kami.
+                              getar wearable menjadi
+                              salah satu tema utama.
+
+ 9       Gelang giroskop      Gelang berbasis Arduino       Contoh dari Indonesia
+         pemandu salat        Nano mengirim kode dari       bahwa gelang berbasis
+         bagi tunarungu,      imam ke gelang makmum         mikrokontroler layak
+         jurnal UMY           tunarungu; tingkat            dibuat.
+                              keberhasilan 89%.
+
+ 10      Kamsiah (2019),      Alat berbasis Arduino Nano    Contoh lokal
+         tugas akhir          dan modul nirkabel; alat      penggunaan getaran
+         Politeknik Negeri    pada makmum tunarungu         sebagai pengganti
+         Bengkalis            bergetar ketika imam          isyarat bunyi.
+                              berganti gerakan.
+
+
+
+b. Sintesis
+     • Getar dan cahaya saling melengkapi. Sebagian besar pengguna Tuli
+       menginginkan keduanya (Findlater dkk., 2019), dan gabungan keduanya
+       membuat informasi lebih jelas (Yağanoğlu & Köse, 2017). Dalam rancangan
+       kami, getaran bertugas menarik perhatian dan lampu menjelaskan jenis
+       suaranya.
+       • Pergelangan tangan adalah posisi yang diterima pengguna. Perangkat di
+          pergelangan terbukti meningkatkan kesadaran bunyi dalam pemakaian harian
+          (Jain dkk., 2020) dan dinilai baik dari sisi privasi serta penerimaan sosial (Jain
+          dkk., 2022).
+
+       • Pola getar dapat dijadikan kode. Pola putus-nyambung dan durasi panjang lebih
+          mudah dikenali (Harkins dkk., 2010), sehingga tiap jenis suara dapat diberi pola
+          berbeda.
+
+       • Celah yang kami isi. Sebagian besar penelitian dilakukan pada pengguna
+          dewasa dan di luar Indonesia, sedangkan kajian untuk siswa Tuli di sekolah
+          masih terbatas (scoping review, 2026). Rancangan kami menyasar anak usia
+          sekolah, dengan kode sederhana dan aplikasi yang dikelola orang tua atau guru.
+
+B. Profil Pengguna
+   a. Gambaran Komunitas
+
+                   b. Indikator                  Data                     Sumber
+
+    Anak dengan gangguan              Sekitar 34 juta anak         WHO, dikutip dalam
+    pendengaran di dunia                                           dokumen Kementerian
+                                                                   Kesehatan RI
+
+    Anak usia 24–59 bulan dengan      0,11%                        Riskesdas 2018
+    tuli sejak lahir di Indonesia
+
+    Angka tuli bawaan pada bayi       Sekitar 1 dari 1.000         Keterangan dokter
+    baru lahir                        kelahiran, atau kurang       spesialis THT melalui
+                                      lebih 5.000 bayi per         Kementerian
+                                      tahun di Indonesia           Kesehatan RI
+
+    Penyandang disabilitas di         Sekitar 9% penduduk          Susenas Maret 2019
+    Indonesia (semua ragam)           atau 23,3 juta jiwa
+
+                      Tabel 2. Data pendukung profil komunitas
+
+   Data di atas menunjukkan bahwa setiap tahun ada ribuan anak Indonesia yang tumbuh
+   dengan hambatan pendengaran sejak lahir. Mereka memasuki usia sekolah di
+   lingkungan yang hampir seluruh tanda pentingnya berbentuk bunyi.
+c. Pengguna Utama
+
+            Aspek                                 Deskripsi
+
+   Usia                    7–12 tahun (usia sekolah dasar), bersekolah di SLB-
+                           B atau sekolah inklusi
+
+   Kondisi pendengaran     Hambatan pendengaran derajat berat sampai sangat
+                           berat pada kedua telinga, sehingga tidak dapat
+                           mengandalkan suara panggilan atau alarm, baik
+                           dengan maupun tanpa alat bantu dengar
+
+   Kondisi fisik dan       Penglihatan dan perabaan berfungsi baik; motorik
+   sensorik lain           tangan normal, sehingga mampu merasakan getaran
+                           di pergelangan dan membedakan warna lampu
+
+   Cara berkomunikasi      Bahasa isyarat (BISINDO/SIBI), membaca gerak
+                           bibir, tulisan, dan isyarat tubuh; kemampuan
+                           membaca masih berkembang sehingga petunjuk
+                           bergambar lebih mudah dipahami
+
+   Kesulitan sehari-hari   Tidak tahu ketika dipanggil dari belakang atau dari
+                           jauh
+                           Tidak mendengar bel sekolah, bel pintu, atau
+                           ketukan
+                           Terlambat menyadari tanda bahaya seperti alarm,
+                           sirine, atau klakson
+                           Harus ditepuk atau didatangi, sehingga kurang
+                           mandiri
+
+   Kebutuhan               Tanda pengganti bunyi yang cepat disadari tanpa
+                           harus melihat ke arah tertentu, mudah dihafal,
+                           nyaman dipakai seharian, dan tidak membuat anak
+                           merasa berbeda dari temannya
+
+   Lingkungan penggunaan   Rumah, ruang kelas, halaman sekolah, dan tempat
+                           umum bersama pendamping
+                           Tabel 3. Profil pengguna utama
+
+   d. Pengguna Pendamping
+        1. Mengelola akun aplikasi (masuk menggunakan email) dan profil anak.
+
+        2. Mengisi nama panggilan anak dan memilih jenis suara yang dideteksi.
+
+        3. Melatih anak memahami arti tiap kode melalui buku panduan di aplikasi.
+
+        4. Membutuhkan aplikasi yang sederhana dan berbahasa Indonesia, karena
+           tidak semua pendamping terbiasa dengan teknologi.
+
+   e. Contoh Persona
+       Persona berikut bersifat rekaan untuk membantu perancangan dan dapat diganti
+       dengan data anak yang sebenarnya setelah observasi.
+
+                   Aspek                                    Deskripsi
+
+        Nama dan usia                  Raka, 9 tahun, kelas 3 di SLB-B
+
+        Kondisi                        Tuli sejak lahir, derajat sangat berat pada kedua
+                                       telinga; tidak memakai alat bantu dengar setiap
+                                       hari
+
+        Komunikasi                     Bahasa isyarat dengan guru dan teman; dengan
+                                       keluarga memakai isyarat rumahan dan gerak
+                                       bibir
+
+        Situasi yang sering terjadi    Ibu memanggil dari dapur tetapi Raka tidak
+                                       tahu; saat bermain di halaman ia tidak
+                                       menyadari bel masuk sudah berbunyi; guru
+                                       harus menghampiri dan menepuk bahunya
+
+        Harapan                        Raka tahu sendiri ketika dipanggil atau ketika
+                                       ada tanda penting, tanpa harus selalu diawasi
+
+                                 Tabel 4. Contoh persona pengguna
+
+
+C. Draf Desain Teknologi Asistif
+    a. Deskripsi Produk
+  Produk terdiri atas dua bagian. Pertama, gelang yang dipakai anak, berisi motor
+  getar dan lampu LED warna. Kedua, aplikasi ponsel yang dikelola orang tua atau
+  guru. Aplikasi mengenali suara penting melalui mikrofon ponsel, lalu mengirim
+  kode ke gelang melalui Bluetooth. Gelang kemudian bergetar dengan pola tertentu
+  dan menyalakan lampu dengan warna tertentu.
+   Nama produk: ............................................ (diisi kelompok)
+b. Alur Kerja Produk
+
+
+
+
+c. Rancangan Gelang
+
+
+
+
+                              Gambar 2. Sketsa rancangan gelang
+      Komponen                         Fungsi              Pertimbangan untuk
+                                                                    anak
+
+      Mikrokontroler         Menerima kode dari          Ukuran kecil dan hemat
+      dengan Bluetooth       aplikasi dan mengatur       daya
+      (misalnya ESP32)       getar serta lampu
+
+      Motor getar koin       Menghasilkan pola           Getaran cukup terasa
+                             getaran                     tetapi tidak mengagetkan;
+                                                         kekuatan dapat diatur
+
+      LED RGB                Menampilkan warna           Satu lampu untuk semua
+                             sesuai jenis suara          warna agar gelang tetap
+                                                         ringkas
+
+      Baterai isi ulang      Sumber daya                 Tertutup rapat dan diisi
+                                                         lewat port pengisian
+
+      Tombol                 Menyalakan gelang dan       Satu tombol saja supaya
+                             menghentikan getaran        mudah
+
+      Tali silikon           Pengikat di pergelangan     Lembut, ringan, tahan
+                                                         percikan air, ukuran dapat
+                                                         disesuaikan
+
+                          Tabel 5. Komponen gelang
+
+d. Kode Getaran dan Lampu
+  Kode dibatasi empat jenis agar mudah dihafal anak. Setiap kode dapat dikenali
+  dari pola getarnya saja, sehingga tetap terbaca ketika lampu sulit terlihat di bawah
+  sinar matahari atau oleh anak dengan buta warna.
+       Jenis suara         Warna               Pola getar          Respons yang
+                           lampu                                     diajarkan
+
+   Nama dipanggil       Biru               2 getaran pendek     Menoleh dan
+                                                                mencari orang yang
+                                                                memanggil
+
+   Bahaya (alarm,       Merah              Getar panjang        Berhenti, melihat
+   sirine, klakson)     berkedip           berulang             sekitar, mendekati
+                        cepat                                   orang dewasa
+
+   Bel sekolah atau     Kuning             1 getaran sedang     Mengikuti kegiatan
+   penanda waktu                                                berikutnya
+
+   Suara rumah (bel     Hijau              3 getaran pendek     Memberi tahu
+   pintu, ketukan)                                              orang tua
+
+
+e. Rancangan Aplikasi Pendamping
+
+             Fitur                                 Keterangan
+
+   Masuk dengan email          Akun dimiliki orang tua atau guru; satu akun dapat
+                               berisi lebih dari satu profil anak dan gelang
+
+   Nama custom                 Mengisi nama yang dikenali sebagai panggilan;
+                               dapat lebih dari satu, misalnya nama lengkap, nama
+                               panggilan, dan panggilan di rumah
+
+   Pengaturan suara            Mengaktifkan atau mematikan jenis suara tertentu
+                               dan mengatur kepekaan; kategori bahaya selalu
+                               aktif
+
+   Guidebook                   Panduan untuk pendamping (cara memasang dan
+                               mengatur) dan panduan untuk anak (arti tiap kode,
+                               dengan gambar dan video isyarat)
+
+   Mode latihan                Tombol untuk mencoba tiap getaran dan warna,
+                               supaya anak dapat berlatih mengenali kode
+                    Fitur                                    Keterangan
+
+        Tombol panggil manual           Pendamping dapat memanggil anak langsung dari
+                                        aplikasi sebagai cadangan bila pengenalan suara
+                                        gagal
+
+                                   Tabel 7. Fitur aplikasi
+
+             Alur layar aplikasi: Masuk dengan email → Buat profil anak dan isi nama
+        panggilan → Sambungkan gelang → Beranda (status gelang, tombol panggil) →
+                     Menu Pengaturan Suara, Guidebook, dan Mode Latihan.
+
+    f. Keterbatasan dan Rencana Pengembangan
+       1. Ponsel harus berada di dekat anak dan aplikasinya tetap aktif. Ke depan,
+          mikrofon dapat ditanam langsung di gelang.
+
+       2. Pengenalan suara dapat keliru di tempat ramai seperti kelas. Karena itu
+          disediakan pengaturan kepekaan dan tombol panggil manual.
+
+       3. Mikrofon yang terus aktif menyangkut privasi. Suara diproses di perangkat,
+          tidak direkam, dan tidak disimpan.
+
+       4. Daya tahan baterai dan jangkauan Bluetooth perlu diuji pada tahap prototipe.
+
+       5. Gelang hanya bermanfaat bila anak dilatih memahami kodenya, sehingga
+          guidebook dan mode latihan menjadi bagian wajib dari produk
+
+D. Daftar Pustaka
+   Findlater, L., Chinh, B., Jain, D., Froehlich, J., Kushalnagar, R., & Lin, A. C. (2019).
+          Deaf and hard-of-hearing individuals' preferences for wearable and mobile
+          sound awareness technologies. Proceedings of the 2019 CHI Conference on
+          Human Factors in Computing Systems.
+   Goodman, S., Kirchner, S., Guttman, R., Jain, D., Froehlich, J., & Findlater, L. (2020).
+          Evaluating smartwatch-based sound feedback for deaf and hard-of-hearing
+          users across contexts. Proceedings of the 2020 CHI Conference on Human
+          Factors in Computing Systems.
+   Harkins, J., Tucker, P. E., Williams, N., & Sauro, J. (2010). Vibration signaling in
+          mobile devices for emergency alerting: A study with deaf evaluators. The
+          Journal     of    Deaf     Studies    and   Deaf    Education,   15(4),   438–445.
+          https://doi.org/10.1093/deafed/enq018
+Jain, D., Chiu, B., Goodman, S., Schmandt, C., Findlater, L., & Froehlich, J. E. (2020).
+       Field study of a tactile sound awareness device for deaf users. Proceedings of
+       the 2020 International Symposium on Wearable Computers (ISWC).
+Jain, D., Ngo, H., Patel, P., Goodman, S., Nguyen, K., Grossman-Kahn, R., Findlater,
+       L., & Froehlich, J. (2022). SoundWatch: Deep learning for sound accessibility
+       on smartwatches. Communications of the ACM.
+Kamsiah. (2019). Alat deteksi gerak sholat imam makmum tunarungu [Tugas akhir,
+       Politeknik Negeri Bengkalis]. http://eprints.polbeng.ac.id/8650/
+Kementerian Kesehatan RI. (2018). Hasil utama Riset Kesehatan Dasar (Riskesdas)
+       2018. Badan Penelitian dan Pengembangan Kesehatan.
+(2024). Real-time Smart Auditory Assistive Wearable (RESAAW) for people with
+       different    degrees     of     hearing     loss.     Jurnal   terbitan      IIETA.
+       https://www.iieta.org/download/file/fid/139008
+(2026). Vibration alert system as the technological assistance in managing deaf students
+       in inclusive education: Global trends and future directions. International
+       Journal                  of                   Special                     Education.
+       https://internationalsped.com/index.php/ijse/article/view/2673
+Gelang giroskop dengan parameter sumbu X dan Y sebagai alat pemandu salat bagi
+       tunarungu.    Jurnal   terbitan     Universitas     Muhammadiyah      Yogyakarta.
+       https://journal.umy.ac.id/index.php/st/article/view/13365
+Yağanoğlu, M., & Köse, C. (2017). Wearable vibration based computer interaction and
+       communication      system     for   deaf.   Applied     Sciences,   7(12),    1296.
+       https://doi.org/10.3390/app7121296
+
