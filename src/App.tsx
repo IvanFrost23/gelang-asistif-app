@@ -7,6 +7,9 @@ import History from './screens/History'
 import Help from './screens/Help'
 import Stub from './screens/Stub'
 import Training from './screens/Training'
+import Login from './screens/Login'
+import Profile from './screens/Profile'
+import Connect from './screens/Connect'
 
 export default function App() {
   return (
@@ -17,9 +20,9 @@ export default function App() {
           <Route path={routes.settings} element={<Settings />} />
           <Route path={routes.history} element={<History />} />
           <Route path={routes.help} element={<Help />} />
-          <Route path={routes.login} element={<Stub screen="login" step={3} />} />
-          <Route path={routes.profile} element={<Stub screen="profile" step={3} />} />
-          <Route path={routes.connect} element={<Stub screen="connect" step={3} />} />
+          <Route path={routes.login} element={<Login />} />
+          <Route path={routes.profile} element={<Profile />} />
+          <Route path={routes.connect} element={<Connect />} />
           <Route path={routes.training} element={<Training />} />
           <Route path={routes.guidebook} element={<Stub screen="guidebook" step={6} />} />
           <Route path="*" element={<Home />} />

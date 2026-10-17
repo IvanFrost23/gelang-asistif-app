@@ -33,6 +33,29 @@ const id = {
   },
   screens: { login: 'Masuk', profile: 'Profil anak', connect: 'Sambungkan gelang', training: 'Mode latihan', guidebook: 'Buku panduan' },
   stub: { madeOnStep: 'Layar ini dibuat pada langkah', back: 'Kembali ke Beranda' },
+  login: {
+    title: 'Masuk', subtitle: 'Akun orang tua atau guru', email: 'Email', password: 'Kata sandi',
+    submit: 'Masuk', hint: 'Prototipe: email apa pun diterima, tanpa verifikasi.', forgot: 'Lupa kata sandi?',
+    signedAs: 'Masuk sebagai', signOut: 'Keluar',
+  },
+  profile: {
+    subtitle: 'Nama anak dan nama panggilan', name: 'Nama anak', namePh: 'Misalnya Nadiyya',
+    callNames: 'Nama panggilan yang dikenali', callNamesHint: 'Boleh lebih dari satu: nama lengkap, panggilan di sekolah, panggilan di rumah.',
+    addName: 'Tambah', namePhCall: 'Misalnya Nad', save: 'Simpan profil', saved: 'Profil tersimpan',
+    list: 'Profil anak', newProfile: 'Profil baru', active: 'Aktif', choose: 'Pilih', remove: 'Hapus', empty: 'Belum ada profil anak. Buat profil pertama.',
+  },
+  connect: {
+    subtitle: 'Hubungkan gelang lewat Bluetooth', status: { disconnected: 'Gelang terputus', searching: 'Mencari gelang…', connected: 'Gelang terhubung' },
+    search: 'Cari gelang', disconnect: 'Putuskan', found: 'Gelang ditemukan', connectTo: 'Sambungkan',
+    step1: 'Tekan tombol di gelang sekali sampai lampu berkedip ungu.', step2: 'Tekan Cari gelang dan pilih gelang dari daftar.', step3: 'Gelang bergetar dua kali bila sambungan berhasil.',
+    simNote: 'Prototipe: sambungan Bluetooth disimulasikan.', battery: 'Baterai',
+  },
+  settingsFull: {
+    sensitivity: 'Kepekaan pengenalan', sensLow: 'Rendah', sensMedium: 'Sedang', sensHigh: 'Tinggi',
+    sensHint: 'Rendah: lebih sedikit salah deteksi di tempat ramai. Tinggi: lebih sedikit suara terlewat.',
+    dangerLocked: 'Kategori bahaya selalu aktif demi keselamatan anak.', saved: 'Pengaturan tersimpan otomatis', account: 'Akun',
+  },
+  homeFull: { noProfile: 'Belum ada profil anak', createProfile: 'Buat profil anak', signInFirst: 'Masuk untuk mulai', lastEvent: 'Terakhir', noEvents: 'Belum ada suara terdeteksi' },
   bracelet: { stop: 'Hentikan getaran', idle: 'Gelang siap', playing: 'Gelang bergetar', noVibrate: 'Getaran nyata hanya terasa di ponsel Android.' },
   training: { subtitle: 'Tekan kode, rasakan getaran, lihat warna', tryIt: 'Coba kode' },
 }
@@ -70,6 +93,29 @@ const en: typeof id = {
   },
   screens: { login: 'Sign in', profile: 'Child profile', connect: 'Connect bracelet', training: 'Training mode', guidebook: 'Guidebook' },
   stub: { madeOnStep: 'This screen is built in step', back: 'Back to Home' },
+  login: {
+    title: 'Sign in', subtitle: 'Parent or teacher account', email: 'Email', password: 'Password',
+    submit: 'Sign in', hint: 'Prototype: any email is accepted, no verification.', forgot: 'Forgot password?',
+    signedAs: 'Signed in as', signOut: 'Sign out',
+  },
+  profile: {
+    subtitle: "Child's name and call names", name: "Child's name", namePh: 'e.g. Nadiyya',
+    callNames: 'Names the child is called by', callNamesHint: 'More than one is fine: full name, school nickname, home nickname.',
+    addName: 'Add', namePhCall: 'e.g. Nad', save: 'Save profile', saved: 'Profile saved',
+    list: 'Child profiles', newProfile: 'New profile', active: 'Active', choose: 'Select', remove: 'Remove', empty: 'No child profiles yet. Create the first one.',
+  },
+  connect: {
+    subtitle: 'Connect the bracelet over Bluetooth', status: { disconnected: 'Bracelet disconnected', searching: 'Searching for bracelet…', connected: 'Bracelet connected' },
+    search: 'Search for bracelet', disconnect: 'Disconnect', found: 'Bracelet found', connectTo: 'Connect',
+    step1: 'Press the bracelet button once until the light blinks purple.', step2: 'Tap Search and choose the bracelet from the list.', step3: 'The bracelet vibrates twice when connected.',
+    simNote: 'Prototype: the Bluetooth connection is simulated.', battery: 'Battery',
+  },
+  settingsFull: {
+    sensitivity: 'Recognition sensitivity', sensLow: 'Low', sensMedium: 'Medium', sensHigh: 'High',
+    sensHint: 'Low: fewer false alerts in noisy places. High: fewer missed sounds.',
+    dangerLocked: "The danger category is always on for the child's safety.", saved: 'Settings are saved automatically', account: 'Account',
+  },
+  homeFull: { noProfile: 'No child profile yet', createProfile: 'Create child profile', signInFirst: 'Sign in to start', lastEvent: 'Last', noEvents: 'No sounds detected yet' },
   bracelet: { stop: 'Stop vibration', idle: 'Bracelet ready', playing: 'Bracelet vibrating', noVibrate: 'Real vibration is felt only on an Android phone.' },
   training: { subtitle: 'Press a code, feel the vibration, see the colour', tryIt: 'Try a code' },
 }
