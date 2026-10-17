@@ -9,6 +9,7 @@ import { dispatch } from '../events/pipeline'
 import { useActiveProfile, useStore } from '../store'
 import { SIGNALS } from '../domain/signals'
 import Simulator from '../components/Simulator'
+import ListenPanel from '../components/ListenPanel'
 
 export default function Home() {
   const { t, lang } = useT()
@@ -49,6 +50,7 @@ export default function Home() {
       ) : (
         <button className="btn block" onClick={() => nav(routes.profile)}>{t.homeFull.createProfile}</button>
       )}
+      <ListenPanel />
       <Simulator />
       <div className="list">
         <MenuRow to={routes.profile} title={t.home.profile} sub={active ? active.callNames.join(', ') : t.home.profileSub} />

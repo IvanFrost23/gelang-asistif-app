@@ -163,3 +163,10 @@ a { color: inherit; text-decoration: none; }
 .faq-q { width: 100%; display: flex; justify-content: space-between; align-items: center; gap: 8px; padding: 12px 14px; border: 0; background: var(--surface); text-align: left; font-weight: 600; font-size: 14px; color: var(--fg); }
 .faq-q span { color: var(--accent); font-size: 18px; }
 .faq p { margin: 0; padding: 0 14px 12px; color: var(--muted); font-size: 14px; line-height: 1.45; }
+
+/* Режим Dengar */
+.listen.on { border-color: var(--accent); }
+.mic { display: inline-block; width: 10px; height: 10px; border-radius: 50%; background: #b7b3cc; margin-right: 8px; vertical-align: middle; }
+.mic.on { background: var(--red); animation: pulse 1s infinite; }
+.level { height: 6px; background: var(--line); border-radius: 3px; overflow: hidden; margin: 6px 0 10px; }
+.level-bar { height: 100%; background: var(--accent); transition: width .1s; }
