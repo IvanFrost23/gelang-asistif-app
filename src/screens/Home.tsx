@@ -6,6 +6,7 @@ import { routes } from '../app/routes'
 import { useT } from '../i18n'
 import { useBraceletLink } from '../hooks/useBraceletLink'
 import { dispatch } from '../events/pipeline'
+import { sayName } from '../audio/demoSounds'
 import { useActiveProfile, useStore } from '../store'
 import { SIGNALS } from '../domain/signals'
 import Simulator from '../components/Simulator'
@@ -19,7 +20,10 @@ export default function Home() {
   const { user, bracelet } = useStore()
   const last = useStore((s) => s.history[0])
 
-  const call = () => dispatch({ category: 'name', source: 'manual' })
+  const call = () => {
+    if (active) sayName(active.callNames[0] ?? active.name)
+    dispatch({ category: 'name', source: 'manual' })
+  }
 
   if (!user) {
     return (
