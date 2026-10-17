@@ -7,7 +7,7 @@ const b = await puppeteer.launch({ executablePath: '/usr/bin/google-chrome', hea
 const p = await b.newPage()
 await p.setViewport({ width: 390, height: 800, deviceScaleFactor: 2 })
 const wait = ms => new Promise(r => setTimeout(r, ms))
-const go = async (path) => { await p.goto(base + path, { waitUntil: 'networkidle0' }); await wait(150) }
+const go = async (path) => { await p.goto(base + path, { waitUntil: 'domcontentloaded' }); await wait(700) }
 const shot = (n) => p.screenshot({ path: `${out}/${n}.png` })
 
 await go('/'); await p.evaluate(() => localStorage.clear()); await go('/')
