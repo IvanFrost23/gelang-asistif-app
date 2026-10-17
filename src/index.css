@@ -147,3 +147,19 @@ a { color: inherit; text-decoration: none; }
 .card-title h2 { margin: 0; }
 .sim { border-style: dashed; }
 .chip[style] { border: 0; cursor: pointer; }
+
+/* Guidebook */
+.seg.two { grid-template-columns: 1fr 1fr; }
+.big { font-size: 18px; font-weight: 600; margin: 8px 0 0; }
+.kid { border-width: 3px; }
+.kid-head { display: flex; align-items: center; gap: 14px; margin-bottom: 8px; }
+.big-dot { width: 36px; height: 36px; }
+.glyph { font-size: 26px; letter-spacing: 4px; font-weight: 700; }
+.kid-what { font-size: 20px !important; margin-bottom: 4px !important; }
+.kid-do { font-size: 17px !important; color: var(--fg) !important; margin-bottom: 12px !important; }
+
+/* FAQ */
+.faq { border: 1px solid var(--line); border-radius: 12px; overflow: hidden; }
+.faq-q { width: 100%; display: flex; justify-content: space-between; align-items: center; gap: 8px; padding: 12px 14px; border: 0; background: var(--surface); text-align: left; font-weight: 600; font-size: 14px; color: var(--fg); }
+.faq-q span { color: var(--accent); font-size: 18px; }
+.faq p { margin: 0; padding: 0 14px 12px; color: var(--muted); font-size: 14px; line-height: 1.45; }

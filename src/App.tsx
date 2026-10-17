@@ -5,11 +5,11 @@ import Home from './screens/Home'
 import Settings from './screens/Settings'
 import History from './screens/History'
 import Help from './screens/Help'
-import Stub from './screens/Stub'
 import Training from './screens/Training'
 import Login from './screens/Login'
 import Profile from './screens/Profile'
 import Connect from './screens/Connect'
+import Guidebook from './screens/Guidebook'
 
 export default function App() {
   return (
@@ -24,7 +24,7 @@ export default function App() {
           <Route path={routes.profile} element={<Profile />} />
           <Route path={routes.connect} element={<Connect />} />
           <Route path={routes.training} element={<Training />} />
-          <Route path={routes.guidebook} element={<Stub screen="guidebook" step={6} />} />
+          <Route path={routes.guidebook} element={<Guidebook />} />
           <Route path="*" element={<Home />} />
         </Routes>
       </BrowserRouter>
