@@ -54,8 +54,8 @@ export default function Home() {
       ) : (
         <button className="btn block" onClick={() => nav(routes.profile)}>{t.homeFull.createProfile}</button>
       )}
-      <ListenPanel />
       <Simulator />
+      <ListenPanel />
       <div className="list">
         <MenuRow to={routes.profile} title={t.home.profile} sub={active ? active.callNames.join(', ') : t.home.profileSub} />
         <MenuRow to={routes.connect} title={t.home.connect} sub={t.home.connectSub} />
