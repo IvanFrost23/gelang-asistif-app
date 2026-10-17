@@ -4,6 +4,8 @@ import { CATEGORIES, SIGNALS } from '../domain/signals'
 import { useT } from '../i18n'
 import { useStore, type Sensitivity } from '../store'
 import { routes } from '../app/routes'
+import { auth } from '../firebase'
+import { signOut as fbSignOut } from 'firebase/auth'
 
 export default function Settings() {
   const { t } = useT()
@@ -44,8 +46,8 @@ export default function Settings() {
         <h2>{t.settingsFull.account}</h2>
         {user ? (
           <div className="row" style={{ padding: '10px 12px' }}>
-            <span className="grow"><div className="sub">{t.login.signedAs}</div><div className="title">{user.email}</div></span>
-            <button className="btn ghost sm" onClick={() => { signOut(); nav(routes.login) }}>{t.login.signOut}</button>
+            <span className="grow"><div className="sub">{t.login.signedAs} · {user.mode === 'cloud' ? t.login.modeCloud : t.login.modeLocal}</div><div className="title">{user.email}</div></span>
+            <button className="btn ghost sm" onClick={() => { signOut(); if (auth) fbSignOut(auth).catch(() => {}); nav(routes.login) }}>{t.login.signOut}</button>
           </div>
         ) : <button className="btn block" onClick={() => nav(routes.login)}>{t.login.submit}</button>}
       </section>

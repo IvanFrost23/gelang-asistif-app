@@ -11,3 +11,4 @@ dist-ssr
 .idea
 .vscode
 *.tsbuildinfo
+firebase-debug.log

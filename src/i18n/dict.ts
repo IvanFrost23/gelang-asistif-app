@@ -37,6 +37,9 @@ const id = {
     title: 'Masuk', subtitle: 'Akun orang tua atau guru', email: 'Email', password: 'Kata sandi',
     submit: 'Masuk', hint: 'Prototipe: email apa pun diterima, tanpa verifikasi.', forgot: 'Lupa kata sandi?',
     signedAs: 'Masuk sebagai', signOut: 'Keluar',
+    hintCloud: 'Pertama kali masuk? Akun dibuat otomatis dengan email dan kata sandi ini.',
+    created: 'Akun baru dibuat.', wrongPassword: 'Kata sandi salah.', localMode: 'Server tidak tersedia, masuk dalam mode lokal.',
+    modeLocal: 'mode lokal', modeCloud: 'tersinkron',
   },
   profile: {
     subtitle: 'Nama anak dan nama panggilan', name: 'Nama anak', namePh: 'Misalnya Nadiyya',
@@ -145,6 +148,9 @@ const en: typeof id = {
     title: 'Sign in', subtitle: 'Parent or teacher account', email: 'Email', password: 'Password',
     submit: 'Sign in', hint: 'Prototype: any email is accepted, no verification.', forgot: 'Forgot password?',
     signedAs: 'Signed in as', signOut: 'Sign out',
+    hintCloud: 'First time? An account is created automatically with this email and password.',
+    created: 'New account created.', wrongPassword: 'Wrong password.', localMode: 'Server unavailable, signed in locally.',
+    modeLocal: 'local mode', modeCloud: 'synced',
   },
   profile: {
     subtitle: "Child's name and call names", name: "Child's name", namePh: 'e.g. Nadiyya',

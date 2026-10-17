@@ -29,14 +29,14 @@ export interface HistoryEvent {
 }
 
 interface State {
-  user: { email: string } | null
+  user: { email: string; uid?: string; mode: 'cloud' | 'local' } | null
   profiles: ChildProfile[]
   activeProfileId: string | null
   settings: SoundSettings
   bracelet: BraceletStatus
   history: HistoryEvent[]
 
-  signIn: (email: string) => void
+  signIn: (email: string, uid?: string) => void
   signOut: () => void
   addProfile: (p: Omit<ChildProfile, 'id'>) => string
   updateProfile: (id: string, patch: Partial<Omit<ChildProfile, 'id'>>) => void
@@ -66,7 +66,7 @@ export const useStore = create<State>()(
       bracelet: 'disconnected',
       history: [],
 
-      signIn: (email) => set({ user: { email } }),
+      signIn: (email, uid) => set({ user: { email, uid, mode: uid ? 'cloud' : 'local' } }),
       signOut: () => set({ user: null, bracelet: 'disconnected' }),
       addProfile: (p) => {
         const id = uid()
