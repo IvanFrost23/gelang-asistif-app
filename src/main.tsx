@@ -3,9 +3,11 @@ import { createRoot } from 'react-dom/client'
 import App from './App'
 import './index.css'
 import { startSync } from './sync'
+import { initNoZoom } from './noZoom'
 import { initTheme } from './theme'
 
 initTheme()
+initNoZoom()
 startSync()
 
 if (import.meta.env.DEV) {

@@ -4,6 +4,7 @@ const config: CapacitorConfig = {
   appId: 'id.ac.unesa.gelangasistif',
   appName: 'Gelang Asistif',
   webDir: 'dist',
+  zoomEnabled: false,
   android: { allowMixedContent: false },
   server: { androidScheme: 'https' },
 }

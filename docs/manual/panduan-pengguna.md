@@ -1,7 +1,7 @@
 # Panduan Pengguna Aplikasi Gelang Asistif
 
 **Gelang Asistif Getar dan Cahaya** — penanda panggilan dan suara penting untuk anak tunarungu.
-Versi dokumen 1.1 (17 Oktober 2026). Panduan ini ditujukan untuk orang tua dan guru (pendamping).
+Versi dokumen 1.2 (17 Oktober 2026). Panduan ini ditujukan untuk orang tua dan guru (pendamping).
 
 Alamat aplikasi: **https://gelang-asistif-3023.web.app**
 
@@ -167,6 +167,8 @@ Tab **Bantuan** berisi tautan ke **Buku panduan**, pertanyaan umum, dan informas
 
 **Mode Dengar tidak bisa dimulai.** Pastikan memakai Chrome di Android, izin mikrofon diberikan, dan ada koneksi internet saat pertama kali memuat model.
 
+**Layar tidak bisa diperbesar.** Memang disengaja agar tampilan tidak bergeser. Gunakan ukuran huruf atau Pembesaran di pengaturan Android.
+
 **Anak bingung dengan kode.** Gunakan Mode latihan setiap hari dan tempel kartu kode (halaman berikut) di kelas atau di rumah.
 
 ## 15. Memasang berkas APK (Android)
@@ -174,6 +176,8 @@ Tab **Bantuan** berisi tautan ke **Buku panduan**, pertanyaan umum, dan informas
 1. Unduh lewat tombol **Unduh aplikasi Android (APK)** di tab Bantuan atau di Beranda versi web (tautan: https://github.com/IvanFrost23/gelang-asistif-releases/releases/latest/download/gelang-asistif.apk), atau salin berkas `gelang-asistif.apk` lewat kabel / WhatsApp / Google Drive, lalu buka.
 2. Jika Android meminta, izinkan **Pasang dari sumber tidak dikenal** untuk aplikasi yang membukanya.
 3. Setelah terpasang, buka **Gelang Asistif** dari layar utama dan izinkan mikrofon saat diminta.
+
+Tampilan aplikasi tidak bisa diperbesar dengan cubit dua jari atau ketuk dua kali, supaya layar tidak bergeser saat anak memegang ponsel. Jika tulisan terlalu kecil, perbesar ukuran huruf di pengaturan Android (Setelan → Tampilan → Ukuran huruf) atau gunakan Pembesaran layar (Setelan → Aksesibilitas).
 
 Versi APK berisi aplikasi yang sama dengan versi web; data profil tersimpan di akun yang sama. Perbedaan: di APK pengenalan **nama** lewat Mode Dengar belum tersedia (WebView Android tidak mendukung Web Speech API), sedangkan pengenalan **bunyi** (bel, sirine, bel pintu) bekerja penuh. Untuk pengenalan nama gunakan versi web di Chrome.
 

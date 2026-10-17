@@ -83,7 +83,7 @@ React 18 + Vite 6 + TypeScript (Vite 6 и React 18 закреплены из-з�
 
 ## Запуск
 
-Сайт: https://gelang-asistif-3023.web.app (Chrome на Android даёт полный набор функций). APK: `docs/gelang-asistif.apk`, публикуется в GitHub Releases репозитория gelang-asistif-releases (ссылка в `src/app/links.ts`).
+Сайт: https://gelang-asistif-3023.web.app (Chrome на Android даёт полный набор функций). APK: `docs/gelang-asistif.apk`, публикуется в GitHub Releases репозитория https://github.com/IvanFrost23/gelang-asistif-releases (ссылка «latest» в `src/app/links.ts`, текущая версия 1.2). Новая версия: `gh release create v1.x docs/gelang-asistif.apk --repo IvanFrost23/gelang-asistif-releases`.
 
 ```bash
 npm install
@@ -96,7 +96,7 @@ node scripts/screenshots.mjs # скриншоты всех экранов
 
 ## Дизайн и тема
 
-Plus Jakarta Sans, карточки на мягких тенях, градиентные кнопки, анимации появления и нажатий, горизонтальный браслет в продуктовом виде. Тёмная тема по системе или вручную в настройках. Демо-режим и тренировка играют синтезированные звуки, ручной вызов произносит имя.
+Plus Jakarta Sans, карточки на мягких тенях, градиентные кнопки, анимации появления и нажатий, горизонтальный браслет в продуктовом виде. Тёмная тема по системе или вручную в настройках. Масштабирование страницы отключено (viewport `user-scalable=no`, `touch-action`, в APK `zoomEnabled: false`), чтобы интерфейс не «уезжал» от случайного щипка или двойного тапа ребёнка. Демо-режим и тренировка играют синтезированные звуки, ручной вызов произносит имя.
 
 ## Что осталось сделать вручную
 

@@ -1,6 +1,6 @@
 # Техническая документация: приложение Gelang Asistif
 
-Версия 1.1, 17 октября 2026. Репозиторий: https://github.com/IvanFrost23/gelang-asistif-app. Сайт: https://gelang-asistif-3023.web.app. Документ описывает реализованное приложение после всех 12 шагов плана.
+Версия 1.2, 17 октября 2026. Репозиторий: https://github.com/IvanFrost23/gelang-asistif-app. Сайт: https://gelang-asistif-3023.web.app. Документ описывает реализованное приложение после всех 12 шагов плана.
 
 ## 1. Назначение и границы
 
@@ -155,7 +155,11 @@ npm run build && npx cap sync android
 cd android && ./gradlew assembleDebug      # android/app/build/outputs/apk/debug/app-debug.apk
 ```
 
-Релизная сборка подписывается ключом из `android/keystore.properties` (не в git), команда `./gradlew assembleRelease`. Готовый файл копируется в `docs/gelang-asistif.apk` и публикуется в GitHub Releases публичного репозитория `gelang-asistif-releases` (Firebase Hosting на тарифе Spark запрещает исполняемые файлы). Ссылка задана в `src/app/links.ts`. В манифесте добавлены RECORD_AUDIO, MODIFY_AUDIO_SETTINGS и VIBRATE; Capacitor сам запрашивает разрешение микрофона при getUserMedia. Иконки сгенерированы из `public/icon-512.png` в mipmap-*. Ограничение: Android WebView не поддерживает SpeechRecognition, поэтому в APK распознавание имени недоступно (панель показывает «Tidak tersedia»), а YAMNet и вибрация работают. Подпись: самоподписанный ключ `keystore/gelang.jks` (вне git), пароли в `android/keystore.properties` (вне git); applicationId `id.ac.unesa.gelangasistif`, versionName 1.1, compileSdk 34.
+Релизная сборка подписывается ключом из `android/keystore.properties` (не в git), команда `./gradlew assembleRelease`. Готовый файл копируется в `docs/gelang-asistif.apk` и публикуется в GitHub Releases публичного репозитория `gelang-asistif-releases` (Firebase Hosting на тарифе Spark запрещает исполняемые файлы). Ссылка задана в `src/app/links.ts`. В манифесте добавлены RECORD_AUDIO, MODIFY_AUDIO_SETTINGS и VIBRATE; Capacitor сам запрашивает разрешение микрофона при getUserMedia. Иконки сгенерированы из `public/icon-512.png` в mipmap-*. Ограничение: Android WebView не поддерживает SpeechRecognition, поэтому в APK распознавание имени недоступно (панель показывает «Tidak tersedia»), а YAMNet и вибрация работают. Подпись: самоподписанный ключ `keystore/gelang.jks` (вне git), пароли в `android/keystore.properties` (вне git); applicationId `id.ac.unesa.gelangasistif`, versionName 1.2 (versionCode 2), compileSdk 34. Релизы: https://github.com/IvanFrost23/gelang-asistif-releases, кнопка в приложении ведёт на ссылку `releases/latest/download/gelang-asistif.apk`, поэтому при новом релизе код менять не нужно.
+
+### Отключённое масштабирование
+
+Интерфейс рассчитан на один масштаб, поэтому зум запрещён на трёх уровнях: meta viewport `maximum-scale=1, user-scalable=no` (Android Chrome и WebView), CSS `touch-action: pan-x pan-y` на `html` и `manipulation` на `body` (щипок и двойной тап, при этом скролл работает), а `src/noZoom.ts` гасит события `gesturestart/gesturechange` (iOS Safari игнорирует viewport), `Ctrl+колесо` и `Ctrl +/-` на десктопе. В Capacitor задано `zoomEnabled: false`.
 
 ## 10. Проверка на устройстве
 
@@ -169,4 +173,5 @@ cd android && ./gradlew assembleDebug      # android/app/build/outputs/apk/debug
 - Первая загрузка Dengar качает 16 МБ модели, дальше кэш браузера.
 - Распознавание в шумном классе неточное; компенсируется чувствительностью, антидребезгом и ручным вызовом.
 - Экран должен оставаться включённым: в фоне браузер приостанавливает аудио.
+- Масштабирование отключено намеренно; пользователям со слабым зрением доступен системный размер шрифта Android и экранная лупа (Settings → Accessibility → Magnification), они работают независимо от зума страницы.
 - Bluetooth и прошивка ESP32 вне рамок проекта.
