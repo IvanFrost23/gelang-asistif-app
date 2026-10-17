@@ -1,20 +1,22 @@
 import Screen from '../components/Screen'
 import MenuRow from '../components/MenuRow'
 import { routes } from '../app/routes'
+import { useT } from '../i18n'
 
 export default function Home() {
+  const { t } = useT()
   return (
-    <Screen title="Beranda" subtitle="Gelang Asistif Getar dan Cahaya">
+    <Screen title={t.nav.home} subtitle={t.appName}>
       <section className="card">
-        <h2>Aisyah <span className="pill">Gelang terhubung</span></h2>
-        <p>Status gelang dan tombol panggil akan muncul di sini (langkah 3).</p>
+        <h2>Aisyah <span className="pill">{t.home.connected}</span></h2>
+        <p>{t.home.statusStub}</p>
       </section>
-      <button className="btn block">Panggil anak sekarang</button>
+      <button className="btn block">{t.home.call}</button>
       <div className="list">
-        <MenuRow to={routes.profile} title="Profil anak" sub="Nama panggilan dan gelang" />
-        <MenuRow to={routes.connect} title="Sambungkan gelang" sub="Bluetooth" />
-        <MenuRow to={routes.training} title="Mode latihan" sub="Coba setiap getaran dan warna" />
-        <MenuRow to={routes.guidebook} title="Buku panduan" sub="Untuk pendamping dan anak" />
+        <MenuRow to={routes.profile} title={t.home.profile} sub={t.home.profileSub} />
+        <MenuRow to={routes.connect} title={t.home.connect} sub={t.home.connectSub} />
+        <MenuRow to={routes.training} title={t.home.training} sub={t.home.trainingSub} />
+        <MenuRow to={routes.guidebook} title={t.home.guidebook} sub={t.home.guidebookSub} />
       </div>
     </Screen>
   )

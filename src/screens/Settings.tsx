@@ -1,15 +1,17 @@
 import Screen from '../components/Screen'
-
-const kinds = [
-  { name: 'Nama dipanggil', color: 'var(--blue)', sub: 'Biru · 2 getaran pendek' },
-  { name: 'Alarm / bahaya', color: 'var(--red)', sub: 'Merah · getar panjang berulang · selalu aktif' },
-  { name: 'Bel sekolah', color: 'var(--yellow)', sub: 'Kuning · 1 getaran sedang' },
-  { name: 'Bel pintu / ketukan', color: 'var(--green)', sub: 'Hijau · 3 getaran pendek' },
-]
+import { useT } from '../i18n'
 
 export default function Settings() {
+  const { t } = useT()
+  const s = t.signals
+  const kinds = [
+    { name: s.name, color: 'var(--blue)', sub: s.nameSub },
+    { name: s.danger, color: 'var(--red)', sub: `${s.dangerSub} · ${t.settings.alwaysOn}` },
+    { name: s.bell, color: 'var(--yellow)', sub: s.bellSub },
+    { name: s.home, color: 'var(--green)', sub: s.homeSub },
+  ]
   return (
-    <Screen title="Pengaturan" subtitle="Jenis suara yang dideteksi">
+    <Screen title={t.nav.settings} subtitle={t.settings.subtitle}>
       <div className="list">
         {kinds.map((k) => (
           <div key={k.name} className="row">
@@ -21,7 +23,7 @@ export default function Settings() {
           </div>
         ))}
       </div>
-      <p className="stub">Saklar dan kepekaan ditambahkan pada langkah 3.</p>
+      <p className="stub">{t.settings.stub}</p>
     </Screen>
   )
 }
