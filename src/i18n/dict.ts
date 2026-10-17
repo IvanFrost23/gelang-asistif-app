@@ -56,6 +56,15 @@ const id = {
     dangerLocked: 'Kategori bahaya selalu aktif demi keselamatan anak.', saved: 'Pengaturan tersimpan otomatis', account: 'Akun',
   },
   homeFull: { noProfile: 'Belum ada profil anak', createProfile: 'Buat profil anak', signInFirst: 'Masuk untuk mulai', lastEvent: 'Terakhir', noEvents: 'Belum ada suara terdeteksi' },
+  historyFull: {
+    today: 'Hari ini', yesterday: 'Kemarin', clear: 'Hapus riwayat',
+    source: { manual: 'Panggil manual', training: 'Mode latihan', simulator: 'Demo', speech: 'Nama dikenali', yamnet: 'Suara dikenali' },
+  },
+  sim: {
+    title: 'Mode demo', show: 'Tampilkan', hide: 'Sembunyikan',
+    hint: 'Untuk presentasi tanpa mikrofon: tekan jenis suara, atau jalankan rangkaian otomatis.',
+    start: 'Jalankan rangkaian demo', stop: 'Hentikan demo',
+  },
   bracelet: { stop: 'Hentikan getaran', idle: 'Gelang siap', playing: 'Gelang bergetar', noVibrate: 'Getaran nyata hanya terasa di ponsel Android.' },
   training: { subtitle: 'Tekan kode, rasakan getaran, lihat warna', tryIt: 'Coba kode' },
 }
@@ -116,6 +125,15 @@ const en: typeof id = {
     dangerLocked: "The danger category is always on for the child's safety.", saved: 'Settings are saved automatically', account: 'Account',
   },
   homeFull: { noProfile: 'No child profile yet', createProfile: 'Create child profile', signInFirst: 'Sign in to start', lastEvent: 'Last', noEvents: 'No sounds detected yet' },
+  historyFull: {
+    today: 'Today', yesterday: 'Yesterday', clear: 'Clear history',
+    source: { manual: 'Manual call', training: 'Training mode', simulator: 'Demo', speech: 'Name recognised', yamnet: 'Sound recognised' },
+  },
+  sim: {
+    title: 'Demo mode', show: 'Show', hide: 'Hide',
+    hint: 'For presenting without a microphone: tap a sound type, or run the automatic sequence.',
+    start: 'Run demo sequence', stop: 'Stop demo',
+  },
   bracelet: { stop: 'Stop vibration', idle: 'Bracelet ready', playing: 'Bracelet vibrating', noVibrate: 'Real vibration is felt only on an Android phone.' },
   training: { subtitle: 'Press a code, feel the vibration, see the colour', tryIt: 'Try a code' },
 }

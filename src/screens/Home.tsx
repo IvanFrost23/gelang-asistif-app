@@ -4,19 +4,21 @@ import MenuRow from '../components/MenuRow'
 import Bracelet from '../components/Bracelet'
 import { routes } from '../app/routes'
 import { useT } from '../i18n'
-import { useBraceletPlayer } from '../hooks/useBraceletPlayer'
+import { useBraceletLink } from '../hooks/useBraceletLink'
+import { dispatch } from '../events/pipeline'
 import { useActiveProfile, useStore } from '../store'
 import { SIGNALS } from '../domain/signals'
+import Simulator from '../components/Simulator'
 
 export default function Home() {
   const { t, lang } = useT()
   const nav = useNavigate()
-  const { state, play } = useBraceletPlayer()
+  const { state } = useBraceletLink()
   const active = useActiveProfile()
-  const { user, bracelet, addEvent } = useStore()
+  const { user, bracelet } = useStore()
   const last = useStore((s) => s.history[0])
 
-  const call = () => { play('name'); addEvent({ category: 'name', source: 'manual' }) }
+  const call = () => dispatch({ category: 'name', source: 'manual' })
 
   if (!user) {
     return (
@@ -47,6 +49,7 @@ export default function Home() {
       ) : (
         <button className="btn block" onClick={() => nav(routes.profile)}>{t.homeFull.createProfile}</button>
       )}
+      <Simulator />
       <div className="list">
         <MenuRow to={routes.profile} title={t.home.profile} sub={active ? active.callNames.join(', ') : t.home.profileSub} />
         <MenuRow to={routes.connect} title={t.home.connect} sub={t.home.connectSub} />
