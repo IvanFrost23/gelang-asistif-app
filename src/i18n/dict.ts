@@ -33,6 +33,8 @@ const id = {
   },
   screens: { login: 'Masuk', profile: 'Profil anak', connect: 'Sambungkan gelang', training: 'Mode latihan', guidebook: 'Buku panduan' },
   stub: { madeOnStep: 'Layar ini dibuat pada langkah', back: 'Kembali ke Beranda' },
+  bracelet: { stop: 'Hentikan getaran', idle: 'Gelang siap', playing: 'Gelang bergetar', noVibrate: 'Getaran nyata hanya terasa di ponsel Android.' },
+  training: { subtitle: 'Tekan kode, rasakan getaran, lihat warna', tryIt: 'Coba kode' },
 }
 
 const en: typeof id = {
@@ -68,6 +70,8 @@ const en: typeof id = {
   },
   screens: { login: 'Sign in', profile: 'Child profile', connect: 'Connect bracelet', training: 'Training mode', guidebook: 'Guidebook' },
   stub: { madeOnStep: 'This screen is built in step', back: 'Back to Home' },
+  bracelet: { stop: 'Stop vibration', idle: 'Bracelet ready', playing: 'Bracelet vibrating', noVibrate: 'Real vibration is felt only on an Android phone.' },
+  training: { subtitle: 'Press a code, feel the vibration, see the colour', tryIt: 'Try a code' },
 }
 
 export const dict: Record<Lang, typeof id> = { id, en }
