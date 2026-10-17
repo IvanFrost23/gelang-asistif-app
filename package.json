@@ -9,6 +9,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@capacitor/android": "^6.2.2",
+    "@capacitor/core": "^6.2.2",
     "@tensorflow/tfjs": "^4.22.0",
     "firebase": "^10.14.1",
     "react": "^18.3.1",
@@ -17,6 +19,7 @@
     "zustand": "^4.5.7"
   },
   "devDependencies": {
+    "@capacitor/cli": "^6.2.2",
     "@types/dom-speech-recognition": "^0.0.12",
     "@types/react": "^18.3.12",
     "@types/react-dom": "^18.3.1",

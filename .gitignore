@@ -12,3 +12,5 @@ dist-ssr
 .vscode
 *.tsbuildinfo
 firebase-debug.log
+keystore/
+android/keystore.properties

@@ -83,19 +83,24 @@ React 18 + Vite 6 + TypeScript (Vite 6 и React 18 закреплены из-з�
 
 ## Запуск
 
-Сайт: https://gelang-asistif-3023.web.app (Chrome на Android даёт полный набор функций).
+Сайт: https://gelang-asistif-3023.web.app (Chrome на Android даёт полный набор функций). APK: https://gelang-asistif-3023.web.app/gelang-asistif.apk (также в `docs/`).
 
 ```bash
 npm install
 npm run dev                 # локально
 npm run build && firebase deploy --only hosting
+npx cap sync android && (cd android && ./gradlew assembleRelease)  # APK, нужны ANDROID_HOME и JAVA_HOME
 ./scripts/build-docs.sh     # PDF документации
 node scripts/screenshots.mjs # скриншоты всех экранов
 ```
 
+## Дизайн и тема
+
+Plus Jakarta Sans, карточки на мягких тенях, градиентные кнопки, анимации появления и нажатий, горизонтальный браслет в продуктовом виде. Тёмная тема по системе или вручную в настройках. Демо-режим и тренировка играют синтезированные звуки, ручной вызов произносит имя.
+
 ## Что осталось сделать вручную
 
-1. В консоли Firebase включить Authentication → Sign-in method → Email/Password (на бесплатном тарифе через CLI нельзя). До этого вход работает в локальном режиме.
+1. ~~Включить Email/Password в консоли Firebase~~ сделано 2026-10-17, вход через Firebase проверен.
 2. Проверить на реальном Android в Chrome: вибрация, микрофон, распознавание имени.
 3. Вписать в книгу название продукта и вставить схему `docs/alur-kerja-produk.png` и скриншоты из `docs/screens/`.
 

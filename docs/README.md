@@ -10,5 +10,6 @@
 | `screens-step*.png` | Промежуточные скриншоты по шагам плана |
 | `manual/panduan-pengguna.md` / `.pdf` | Руководство пользователя на индонезийском плюс карточка кодов для ребёнка |
 | `dev/dokumentasi-teknis.md` / `.pdf` | Техническая документация |
+| `gelang-asistif.apk` | Подписанный релизный APK (Capacitor, Android 7+) |
 
 PDF пересобираются командой `scripts/build-docs.sh`, скриншоты командой `node scripts/screenshots.mjs`.

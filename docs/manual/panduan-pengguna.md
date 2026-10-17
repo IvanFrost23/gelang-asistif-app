@@ -1,7 +1,7 @@
 # Panduan Pengguna Aplikasi Gelang Asistif
 
 **Gelang Asistif Getar dan Cahaya** — penanda panggilan dan suara penting untuk anak tunarungu.
-Versi dokumen 1.0 (17 Oktober 2026). Panduan ini ditujukan untuk orang tua dan guru (pendamping).
+Versi dokumen 1.1 (17 Oktober 2026). Panduan ini ditujukan untuk orang tua dan guru (pendamping).
 
 Alamat aplikasi: **https://gelang-asistif-3023.web.app**
 
@@ -40,6 +40,9 @@ Aplikasi berjalan di peramban ponsel, tidak perlu dipasang dari toko aplikasi.
 2. Pilih menu Chrome (titik tiga) → **Tambahkan ke layar utama**. Ikon aplikasi muncul seperti aplikasi biasa dan dibuka layar penuh.
 3. Saat diminta, izinkan akses **mikrofon**. Izin ini dibutuhkan untuk mode Dengar (bagian 9).
 4. Bahasa tampilan dapat diganti kapan saja dengan tombol **ID / EN** di pojok kanan atas.
+5. Tampilan mengikuti mode gelap/terang ponsel. Pilihan manual ada di **Pengaturan → Tampilan** (Otomatis / Terang / Gelap).
+
+Aplikasi juga tersedia sebagai berkas **APK** untuk Android (lihat bagian 15), isinya sama dengan versi web.
 
 Aplikasi juga bisa dibuka di laptop untuk presentasi, tetapi getaran hanya terasa di ponsel Android.
 
@@ -80,7 +83,7 @@ Catatan: pada prototipe ini sambungan Bluetooth disimulasikan. Semua kode dapat 
 
 <div class="shots"><img src="../screens/07-beranda.png"><img src="../screens/09-beranda-sinyal-bahaya.png"></div>
 
-Beranda menampilkan nama anak, status gelang, gambar gelang yang menyala sesuai kode terakhir, waktu suara terakhir, tombol **Panggil anak sekarang**, panel **Mode Dengar**, panel **Mode demo**, dan menu ke layar lain.
+Beranda menampilkan nama anak, status gelang, gambar gelang yang menyala sesuai kode terakhir, waktu suara terakhir, tombol **Panggil anak sekarang**, panel **Mode demo**, panel **Mode Dengar**, dan menu ke layar lain.
 
 ## 8. Pengaturan suara
 
@@ -91,13 +94,14 @@ Buka tab **Pengaturan** di bagian bawah layar.
 - **Saklar tiap jenis suara.** Matikan jenis suara yang tidak diperlukan, misalnya "Bel pintu" ketika anak di sekolah, supaya gelang tidak terlalu sering bergetar.
 - **Bahaya selalu aktif.** Kategori ini tidak dapat dimatikan demi keselamatan anak.
 - **Kepekaan.** Pilih **Rendah** jika aplikasi terlalu sering salah mendeteksi di tempat ramai, atau **Tinggi** jika suara sering terlewat.
+- **Tampilan.** Otomatis mengikuti ponsel, atau pilih Terang / Gelap.
 - Pengaturan tersimpan otomatis. Di bagian **Akun** terlihat email yang masuk dan tombol **Keluar**.
 
 ## 9. Mode Dengar (pengenalan suara) — dalam pengembangan
 
 Fitur ini ditandai **Dalam pengembangan**: pengenalan bisa keliru di tempat ramai dan bekerja paling baik di Chrome pada Android. Bila hasilnya belum tepat, gunakan tombol Panggil anak atau Mode demo.
 
-Mode Dengar membuat aplikasi mendengarkan sekitar lewat mikrofon ponsel dan mengirim kode ke gelang secara otomatis.
+Mode Dengar membuat aplikasi mendengarkan sekitar lewat mikrofon ponsel dan mengirim kode ke gelang secara otomatis. Panelnya di Beranda ringkas: judul, satu kalimat, dan tombol; penjelasan lengkap muncul saat menekan tombol **i**.
 
 1. Di Beranda, tekan **Mulai Dengar**. Saat pertama kali, aplikasi mengunduh model pengenalan suara (16 MB); tunggu sampai status menjadi **Mendengarkan**. Berikutnya model sudah tersimpan di ponsel.
 2. Letakkan ponsel di dekat anak, misalnya di meja kelas atau di saku pendamping, dengan aplikasi tetap terbuka dan layar menyala.
@@ -114,7 +118,7 @@ Hal yang perlu diketahui:
 
 <div class="shots"><img src="../screens/08-beranda-mode-demo.png"></div>
 
-Jika pengenalan suara gagal atau pendamping ingin memanggil anak langsung, tekan tombol besar **Panggil anak sekarang** di Beranda. Gelang bergetar dengan kode "Nama dipanggil" (biru, 2 getaran pendek).
+Jika pengenalan suara gagal atau pendamping ingin memanggil anak langsung, tekan tombol besar **Panggil anak sekarang** di Beranda. Ponsel mengucapkan nama panggilan anak, dan gelang bergetar dengan kode "Nama dipanggil" (biru, 2 getaran pendek).
 
 **Mode demo** dipakai untuk presentasi: tekan **Tampilkan**, lalu tekan salah satu jenis suara, atau tekan **Jalankan rangkaian demo** supaya aplikasi memutar contoh satu per satu. Dengan saklar **Putar suara** menyala, ponsel membunyikan suara yang sesuai lewat speaker: bel sekolah, sirine, bel pintu, dan nama anak yang diucapkan. Jadi di presentasi bisa dipakai dua ponsel: satu memutar demo, satu lagi dalam Mode Dengar mengenali suaranya. Semua kejadian demo juga masuk ke Riwayat.
 
@@ -125,7 +129,7 @@ Jika pengenalan suara gagal atau pendamping ingin memanggil anak langsung, tekan
 Gelang hanya bermanfaat bila anak memahami kodenya. Mode latihan membantu anak berlatih.
 
 1. Dari Beranda, buka **Mode latihan**.
-2. Tekan salah satu dari empat tombol kode. Gelang di layar menyala dengan warna yang sesuai, ponsel dan gelang sungguhan bergetar dengan pola yang sesuai.
+2. Tekan salah satu dari empat tombol kode. Gelang di layar menyala dengan warna yang sesuai, ponsel dan gelang sungguhan bergetar dengan pola yang sesuai, dan speaker memutar bunyi aslinya (bel, sirine, bel pintu, atau nama anak) supaya pendamping dan teman ikut mendengar. Saklar **Putar suara** mematikannya bila perlu.
 3. Tanyakan kepada anak (dengan isyarat) kode apa yang baru dirasakan dan apa yang harus dilakukan.
 4. Ulangi sampai anak hafal keempat kode. Lakukan latihan singkat setiap hari pada minggu pertama.
 
@@ -155,6 +159,14 @@ Tab **Bantuan** berisi tautan ke **Buku panduan**, pertanyaan umum, dan informas
 **Mode Dengar tidak bisa dimulai.** Pastikan memakai Chrome di Android, izin mikrofon diberikan, dan ada koneksi internet saat pertama kali memuat model.
 
 **Anak bingung dengan kode.** Gunakan Mode latihan setiap hari dan tempel kartu kode (halaman berikut) di kelas atau di rumah.
+
+## 15. Memasang berkas APK (Android)
+
+1. Unduh **https://gelang-asistif-3023.web.app/gelang-asistif.apk** langsung di ponsel, atau salin berkas `gelang-asistif.apk` lewat kabel / WhatsApp / Google Drive, lalu buka.
+2. Jika Android meminta, izinkan **Pasang dari sumber tidak dikenal** untuk aplikasi yang membukanya.
+3. Setelah terpasang, buka **Gelang Asistif** dari layar utama dan izinkan mikrofon saat diminta.
+
+Versi APK berisi aplikasi yang sama dengan versi web; data profil tersimpan di akun yang sama. Perbedaan: di APK pengenalan **nama** lewat Mode Dengar belum tersedia (WebView Android tidak mendukung Web Speech API), sedangkan pengenalan **bunyi** (bel, sirine, bel pintu) bekerja penuh. Untuk pengenalan nama gunakan versi web di Chrome.
 
 ---
 
