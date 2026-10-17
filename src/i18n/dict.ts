@@ -62,7 +62,7 @@ const id = {
   homeFull: { noProfile: 'Belum ada profil anak', createProfile: 'Buat profil anak', signInFirst: 'Masuk untuk mulai', lastEvent: 'Terakhir', noEvents: 'Belum ada suara terdeteksi' },
   historyFull: {
     today: 'Hari ini', yesterday: 'Kemarin', clear: 'Hapus riwayat',
-    source: { manual: 'Panggil manual', training: 'Mode latihan', simulator: 'Demo', speech: 'Nama dikenali', yamnet: 'Suara dikenali' },
+    source: { manual: 'Panggil manual', training: 'Mode latihan', simulator: 'Demo', speech: 'Nama dikenali', yamnet: 'Suara dikenali', custom: 'Suara sendiri' },
   },
   sim: {
     title: 'Mode demo', show: 'Tampilkan', hide: 'Sembunyikan',
@@ -128,6 +128,13 @@ const id = {
     privacy: 'Mengenali nama anak dan jenis bunyi (bel, alarm, sirine, klakson, bel pintu, ketukan). Nama lewat layanan suara Google, bunyi di ponsel. Tidak ada rekaman yang disimpan.',
     nameRec: 'Pengenalan nama', soundRec: 'Pengenalan bunyi', hears: 'Terdengar', nameOff: 'Tidak tersedia di peramban ini', soundOff: 'Model gagal dimuat',
     whatItHears: 'Coba: panggil nama anak, bunyikan bel atau sirine (bisa dari Mode demo di ponsel lain).',
+  },
+  custom: {
+    title: 'Suara lain (custom)', hint: 'Rekam bunyi di rumah atau sekolah (bel pintu, bel kelas, alarm) supaya aplikasi mengenali bunyi itu persis.',
+    add: 'Rekam suara baru', name: 'Nama suara', namePh: 'Misalnya Bel rumah', category: 'Diberi tanda sebagai',
+    record: 'Rekam 3 detik', again: 'Rekam lagi untuk menambah contoh', recording: 'Merekam… bunyikan sekarang', processing: 'Mengolah…', save: 'Simpan', cancel: 'Batal',
+    saved: 'Suara tersimpan', empty: 'Belum ada suara sendiri.', remove: 'Hapus', micDenied: 'Mikrofon ditolak.', test: 'Uji',
+    note: 'Pengenalan suara sendiri bekerja di Mode Dengar bersama pengenalan bawaan.',
   },
   quiz: {
     title: 'Tebak kode', subtitle: 'Rasakan getaran, lihat warna, pilih artinya', teaser: 'Permainan 5 ronde dengan bintang',
@@ -202,7 +209,7 @@ const en: typeof id = {
   homeFull: { noProfile: 'No child profile yet', createProfile: 'Create child profile', signInFirst: 'Sign in to start', lastEvent: 'Last', noEvents: 'No sounds detected yet' },
   historyFull: {
     today: 'Today', yesterday: 'Yesterday', clear: 'Clear history',
-    source: { manual: 'Manual call', training: 'Training mode', simulator: 'Demo', speech: 'Name recognised', yamnet: 'Sound recognised' },
+    source: { manual: 'Manual call', training: 'Training mode', simulator: 'Demo', speech: 'Name recognised', yamnet: 'Sound recognised', custom: 'Own sound' },
   },
   sim: {
     title: 'Demo mode', show: 'Show', hide: 'Hide',
@@ -268,6 +275,13 @@ const en: typeof id = {
     privacy: 'Recognises the child’s name and sound types (bell, alarm, siren, horn, doorbell, knock). Names via the Google speech service, sounds on the phone. Nothing is recorded.',
     nameRec: 'Name recognition', soundRec: 'Sound recognition', hears: 'Hearing', nameOff: 'Not available in this browser', soundOff: 'Model failed to load',
     whatItHears: 'Try: call the child’s name, ring a bell or play a siren (e.g. from Demo mode on another phone).',
+  },
+  custom: {
+    title: 'Other sounds (custom)', hint: 'Record a sound at home or school (doorbell, class bell, alarm) so the app recognises that exact sound.',
+    add: 'Record a new sound', name: 'Sound name', namePh: 'e.g. Home doorbell', category: 'Signal as',
+    record: 'Record 3 seconds', again: 'Record again to add an example', recording: 'Recording… make the sound now', processing: 'Processing…', save: 'Save', cancel: 'Cancel',
+    saved: 'Sound saved', empty: 'No custom sounds yet.', remove: 'Remove', micDenied: 'Microphone denied.', test: 'Test',
+    note: 'Custom sounds are recognised in Listen mode alongside the built-in ones.',
   },
   quiz: {
     title: 'Guess the code', subtitle: 'Feel the vibration, see the colour, pick the meaning', teaser: '5-round game with stars',

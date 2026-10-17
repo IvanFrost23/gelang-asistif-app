@@ -94,6 +94,7 @@ Buka tab **Pengaturan** di bagian bawah layar.
 - **Saklar tiap jenis suara.** Matikan jenis suara yang tidak diperlukan, misalnya "Bel pintu" ketika anak di sekolah, supaya gelang tidak terlalu sering bergetar.
 - **Bahaya selalu aktif.** Kategori ini tidak dapat dimatikan demi keselamatan anak.
 - **Kepekaan.** Pilih **Rendah** jika aplikasi terlalu sering salah mendeteksi di tempat ramai, atau **Tinggi** jika suara sering terlewat.
+- **Suara lain (custom).** Rekam bunyi di rumah atau sekolah (bel pintu, bel kelas, alarm) selama 3 detik, beri nama, pilih jenis tandanya (bel sekolah, bel pintu, atau bahaya), lalu simpan. Rekam ulang sekali atau dua kali untuk menambah contoh. Di Mode Dengar aplikasi akan mengenali bunyi itu persis dan menandainya sesuai pilihan.
 - **Tampilan.** Otomatis mengikuti ponsel, atau pilih Terang / Gelap.
 - Pengaturan tersimpan otomatis. Di bagian **Akun** terlihat email yang masuk dan tombol **Keluar**.
 
@@ -132,6 +133,14 @@ Gelang hanya bermanfaat bila anak memahami kodenya. Mode latihan membantu anak b
 2. Tekan salah satu dari empat tombol kode. Gelang di layar menyala dengan warna yang sesuai, ponsel dan gelang sungguhan bergetar dengan pola yang sesuai, dan speaker memutar bunyi aslinya (bel, sirine, bel pintu, atau nama anak) supaya pendamping dan teman ikut mendengar. Saklar **Putar suara** mematikannya bila perlu.
 3. Tanyakan kepada anak (dengan isyarat) kode apa yang baru dirasakan dan apa yang harus dilakukan.
 4. Ulangi sampai anak hafal keempat kode. Lakukan latihan singkat setiap hari pada minggu pertama.
+
+## 11a. Permainan Tebak kode
+
+Di bawah Mode latihan ada permainan **Tebak kode**: gelang bergetar dan menyala, anak memilih artinya dari empat gambar. Lima ronde, bintang untuk jawaban benar, rekor tersimpan. Gunakan sebagai cara menyenangkan untuk menghafal kode.
+
+## 11b. Kilatan layar
+
+Setiap kali ada tanda, layar ponsel menyala penuh dengan warna kode, ikon besar, dan kalimat pendek selama 1–2 detik. Letakkan ponsel di meja kelas supaya anak dan teman melihatnya tanpa menyentuh ponsel. Ketuk layar untuk menutupnya lebih cepat.
 
 ## 12. Riwayat
 

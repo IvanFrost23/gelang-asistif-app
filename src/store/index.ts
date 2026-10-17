@@ -4,7 +4,9 @@ import { CATEGORIES, type Category } from '../domain/signals'
 
 export type Sensitivity = 'low' | 'medium' | 'high'
 export type BraceletStatus = 'disconnected' | 'searching' | 'connected'
-export type EventSource = 'manual' | 'training' | 'simulator' | 'speech' | 'yamnet'
+export type EventSource = 'manual' | 'training' | 'simulator' | 'speech' | 'yamnet' | 'custom'
+
+export interface CustomSound { id: string; name: string; category: Category; vectors: number[][]; at: number }
 
 export interface ChildProfile {
   id: string
@@ -37,6 +39,7 @@ interface State {
   history: HistoryEvent[]
   quizResults: { at: number; score: number }[]
   quizBest: number
+  customSounds: CustomSound[]
 
   signIn: (email: string, uid?: string) => void
   signOut: () => void
@@ -50,6 +53,8 @@ interface State {
   addEvent: (e: Omit<HistoryEvent, 'id' | 'at' | 'profileId'>) => void
   clearHistory: () => void
   addQuizResult: (score: number) => void
+  addCustomSound: (s: Omit<CustomSound, 'id' | 'at'>) => void
+  removeCustomSound: (id: string) => void
 }
 
 const uid = () => Math.random().toString(36).slice(2, 10)
@@ -70,6 +75,7 @@ export const useStore = create<State>()(
       history: [],
       quizResults: [],
       quizBest: 0,
+      customSounds: [],
 
       signIn: (email, uid) => set({ user: { email, uid, mode: uid ? 'cloud' : 'local' } }),
       signOut: () => set({ user: null, bracelet: 'disconnected' }),
@@ -93,9 +99,11 @@ export const useStore = create<State>()(
         set((s) => ({ history: [{ ...e, id: uid(), at: Date.now(), profileId }, ...s.history].slice(0, 200) }))
       },
       clearHistory: () => set({ history: [] }),
+      addCustomSound: (c) => set((s) => ({ customSounds: [...s.customSounds, { ...c, id: uid(), at: Date.now() }].slice(-8) })),
+      removeCustomSound: (id) => set((s) => ({ customSounds: s.customSounds.filter((x) => x.id !== id) })),
       addQuizResult: (score) => set((s) => ({ quizResults: [{ at: Date.now(), score }, ...s.quizResults].slice(0, 50), quizBest: Math.max(s.quizBest, score) })),
     }),
-    { name: 'gelang-asistif', version: 2, migrate: (st) => ({ quizResults: [], quizBest: 0, ...(st as object) }) },
+    { name: 'gelang-asistif', version: 3, migrate: (st) => ({ quizResults: [], quizBest: 0, customSounds: [], ...(st as object) }) },
   ),
 )
 

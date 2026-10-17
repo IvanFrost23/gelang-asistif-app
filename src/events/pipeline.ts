@@ -11,6 +11,8 @@ export interface IncomingEvent {
 /** Порог уверенности по настройке чувствительности. YAMNet даёт более низкие баллы, чем речь, поэтому шкала своя. */
 export const THRESHOLD: Record<Sensitivity, number> = { low: 0.6, medium: 0.4, high: 0.25 }
 export const YAMNET_THRESHOLD: Record<Sensitivity, number> = { low: 0.45, medium: 0.3, high: 0.18 }
+/** Косинусная близость к записанному своему звуку. */
+export const CUSTOM_THRESHOLD: Record<Sensitivity, number> = { low: 0.85, medium: 0.78, high: 0.70 }
 
 const DEBOUNCE_MS = 3000
 const lastAt: Partial<Record<Category, number>> = {}
@@ -29,7 +31,7 @@ export function dispatch(e: IncomingEvent): boolean {
   const { settings, addEvent } = useStore.getState()
   const sig = SIGNALS[e.category]
   if (!sig.alwaysOn && !settings.enabled[e.category]) return false
-  const threshold = (e.source === 'yamnet' ? YAMNET_THRESHOLD : THRESHOLD)[settings.sensitivity]
+  const threshold = (e.source === 'yamnet' ? YAMNET_THRESHOLD : e.source === 'custom' ? CUSTOM_THRESHOLD : THRESHOLD)[settings.sensitivity]
   if (e.confidence !== undefined && e.confidence < threshold) return false
   const now = Date.now()
   if (e.source !== 'training' && now - (lastAt[e.category] ?? 0) < DEBOUNCE_MS) return false

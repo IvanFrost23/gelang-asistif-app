@@ -4,6 +4,7 @@ import { useStore } from '../store'
 import { matchName } from './nameMatch'
 import { speechSupported, startSpeech, type SpeechHandle } from './speech'
 import { startYamnet, type YamnetHandle } from './yamnet'
+import { matchCustom } from './custom'
 
 export type ListenStatus = 'idle' | 'starting' | 'listening' | 'denied' | 'unsupported' | 'error'
 
@@ -63,6 +64,13 @@ export function useListen() {
         stream: stream.current,
         onLevel: (rms) => patch({ level: Math.min(1, rms * 8) }),
         onTop: (top) => patch({ lastClass: `${top.className} ${Math.round(top.score * 100)}%` }),
+        onEmbedding: (emb) => {
+          const sounds = useStore.getState().customSounds
+          if (!sounds.length) return
+          const m = matchCustom(emb, sounds)
+          if (m && m.sim >= 0.7) patch({ lastClass: `${m.sound.name} ${Math.round(m.sim * 100)}%` })
+          if (m) dispatch({ category: m.sound.category, source: 'custom', confidence: m.sim, detail: m.sound.name })
+        },
         onDetect: (d) => dispatch({ category: d.category, source: 'yamnet', confidence: d.score, detail: d.className }),
       })
       patch({ modelOk: true })

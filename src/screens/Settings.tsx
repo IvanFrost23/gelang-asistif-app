@@ -8,6 +8,7 @@ import { useStore, type Sensitivity } from '../store'
 import { routes } from '../app/routes'
 import { auth } from '../firebase'
 import { signOut as fbSignOut } from 'firebase/auth'
+import CustomSounds from '../components/CustomSounds'
 
 export default function Settings() {
   const { t } = useT()
@@ -37,6 +38,7 @@ export default function Settings() {
         })}
       </div>
       <p className="hint">{t.settingsFull.dangerLocked}</p>
+      <CustomSounds />
 
       <section className="card">
         <h2>{t.settingsFull.sensitivity}</h2>
