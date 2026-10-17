@@ -8,9 +8,10 @@ export default function ListenPanel() {
   return (
     <section className={`card listen ${on ? 'on' : ''}`}>
       <div className="card-title">
-        <h2><span className={`mic ${on ? 'on' : ''}`} />{t.listen.title}</h2>
+        <h2><span className={`mic ${on ? 'on' : ''}`} />{t.listen.title} <span className="pill beta">{t.listen.beta}</span></h2>
         <span className="pill">{t.listen.status[state.status]}</span>
       </div>
+      {!on && state.status !== 'denied' && state.status !== 'error' && state.status !== 'unsupported' && <p className="sub" style={{ marginBottom: 10 }}>{t.listen.betaNote}</p>}
       {on && <div className="level"><div className="level-bar" style={{ width: `${Math.round(state.level * 100)}%` }} /></div>}
       {state.status === 'listening' && (
         <div className="list" style={{ marginBottom: 10 }}>

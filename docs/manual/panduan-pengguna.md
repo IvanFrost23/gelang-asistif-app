@@ -93,7 +93,9 @@ Buka tab **Pengaturan** di bagian bawah layar.
 - **Kepekaan.** Pilih **Rendah** jika aplikasi terlalu sering salah mendeteksi di tempat ramai, atau **Tinggi** jika suara sering terlewat.
 - Pengaturan tersimpan otomatis. Di bagian **Akun** terlihat email yang masuk dan tombol **Keluar**.
 
-## 9. Mode Dengar (pengenalan suara)
+## 9. Mode Dengar (pengenalan suara) — dalam pengembangan
+
+Fitur ini ditandai **Dalam pengembangan**: pengenalan bisa keliru di tempat ramai dan bekerja paling baik di Chrome pada Android. Bila hasilnya belum tepat, gunakan tombol Panggil anak atau Mode demo.
 
 Mode Dengar membuat aplikasi mendengarkan sekitar lewat mikrofon ponsel dan mengirim kode ke gelang secara otomatis.
 
