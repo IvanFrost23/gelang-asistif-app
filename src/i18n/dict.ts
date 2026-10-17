@@ -113,7 +113,7 @@ const id = {
     whatItHears: 'Coba: panggil nama anak, bunyikan bel atau sirine (bisa dari Mode demo di ponsel lain).',
   },
   bracelet: { stop: 'Hentikan getaran', idle: 'Gelang siap', playing: 'Gelang bergetar', noVibrate: 'Getaran nyata hanya terasa di ponsel Android.' },
-  training: { subtitle: 'Tekan kode, rasakan getaran, lihat warna', tryIt: 'Coba kode' },
+  training: { subtitle: 'Tekan kode, rasakan getaran, lihat warna', tryIt: 'Coba kode', soundHint: 'Agar pendamping dan teman mendengar bunyi aslinya' },
 }
 
 const en: typeof id = {
@@ -229,7 +229,7 @@ const en: typeof id = {
     whatItHears: 'Try: call the child’s name, ring a bell or play a siren (e.g. from Demo mode on another phone).',
   },
   bracelet: { stop: 'Stop vibration', idle: 'Bracelet ready', playing: 'Bracelet vibrating', noVibrate: 'Real vibration is felt only on an Android phone.' },
-  training: { subtitle: 'Press a code, feel the vibration, see the colour', tryIt: 'Try a code' },
+  training: { subtitle: 'Press a code, feel the vibration, see the colour', tryIt: 'Try a code', soundHint: 'So carers and classmates hear the real sound' },
 }
 
 export const dict: Record<Lang, typeof id> = { id, en }
