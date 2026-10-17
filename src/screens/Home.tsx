@@ -11,7 +11,7 @@ export default function Home() {
   return (
     <Screen title={t.nav.home} subtitle={t.appName}>
       <section className="card">
-        <h2>Aisyah <span className="pill">{t.home.connected}</span></h2>
+        <h2>Nadiyya <span className="pill">{t.home.connected}</span></h2>
         <Bracelet state={state} size={220} />
       </section>
       <button className="btn block" onClick={() => play('name')}>{t.home.call}</button>

@@ -82,14 +82,15 @@ a { color: inherit; text-decoration: none; }
 /* Браслет */
 .bracelet { display: block; margin: 0 auto; overflow: visible; }
 .bracelet .led { transition: fill .12s; }
-.bracelet .led-glow { transition: fill .12s, opacity .12s; }
+.bracelet .led-glow { transition: fill .12s, opacity .2s; }
+.bracelet.active .led { filter: drop-shadow(0 0 6px currentColor) brightness(1.15); }
 .bracelet.shaking .body { animation: shake .09s linear infinite; }
 .bracelet.blinking .led, .bracelet.blinking .led-glow { animation: blink .22s steps(1) infinite; }
 @keyframes shake {
   0% { transform: translate(0, 0); } 25% { transform: translate(-1.5px, 1px); }
   50% { transform: translate(1.5px, -1px); } 75% { transform: translate(-1px, -1.5px); } 100% { transform: translate(1px, 1.5px); }
 }
-@keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: .15; } }
+@keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: .35; } }
 
 .signal-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
 .signal-btn {
