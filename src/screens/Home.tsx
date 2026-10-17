@@ -28,7 +28,7 @@ export default function Home() {
   if (!user) {
     return (
       <Screen title={t.nav.home} subtitle={t.appName}>
-        <section className="card center"><Bracelet state={state} size={220} /><p>{t.homeFull.signInFirst}</p></section>
+        <section className="card hero center"><Bracelet state={state} size={220} /><p>{t.homeFull.signInFirst}</p></section>
         <button className="btn block" onClick={() => nav(routes.login)}>{t.login.submit}</button>
       </Screen>
     )
@@ -36,7 +36,7 @@ export default function Home() {
 
   return (
     <Screen title={t.nav.home} subtitle={t.appName}>
-      <section className="card">
+      <section className="card hero">
         <div className="card-title">
           <h2>{active ? active.name : t.homeFull.noProfile}</h2>
           <Link to={routes.connect} className={`status ${bracelet}`}><span className="dot" />{t.connect.status[bracelet]}</Link>

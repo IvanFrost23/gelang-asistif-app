@@ -22,7 +22,7 @@ export default function Training() {
   const { supported } = useVibrate()
   return (
     <Screen title={t.screens.training} subtitle={t.training.subtitle}>
-      <section className="card">
+      <section className="card hero">
         <Bracelet state={state} />
         <p style={{ textAlign: 'center', marginTop: 8 }}>{state.signal ? t.bracelet.playing : t.bracelet.idle}</p>
       </section>

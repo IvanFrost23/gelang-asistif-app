@@ -28,7 +28,7 @@ export default function Guidebook() {
 
       {tab === 'child' && (
         <>
-          <section className="card center">
+          <section className="card hero center">
             <Bracelet state={state} size={200} />
             <p className="big">{t.guide.childIntro}</p>
           </section>
