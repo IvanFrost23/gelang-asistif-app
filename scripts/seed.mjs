@@ -6,7 +6,7 @@ export const SEED = JSON.stringify({ state: {
   settings: { enabled: { name: true, danger: true, bell: true, home: true }, sensitivity: 'medium' },
   bracelet: 'connected', history: [] }, version: 1 })
 export async function seed(p, url = 'http://localhost:5173/') {
-  await p.goto(url, { waitUntil: 'networkidle0' })
+  await p.goto(url, { waitUntil: 'domcontentloaded' }); await new Promise(r => setTimeout(r, 500))
   await p.evaluate((s) => localStorage.setItem('gelang-asistif', s), SEED)
-  await p.reload({ waitUntil: 'networkidle0' })
+  await p.reload({ waitUntil: 'domcontentloaded' }); await new Promise(r => setTimeout(r, 700))
 }

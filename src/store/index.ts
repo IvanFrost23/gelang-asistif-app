@@ -35,6 +35,8 @@ interface State {
   settings: SoundSettings
   bracelet: BraceletStatus
   history: HistoryEvent[]
+  quizResults: { at: number; score: number }[]
+  quizBest: number
 
   signIn: (email: string, uid?: string) => void
   signOut: () => void
@@ -47,6 +49,7 @@ interface State {
   setBracelet: (s: BraceletStatus) => void
   addEvent: (e: Omit<HistoryEvent, 'id' | 'at' | 'profileId'>) => void
   clearHistory: () => void
+  addQuizResult: (score: number) => void
 }
 
 const uid = () => Math.random().toString(36).slice(2, 10)
@@ -65,6 +68,8 @@ export const useStore = create<State>()(
       settings: defaultSettings,
       bracelet: 'disconnected',
       history: [],
+      quizResults: [],
+      quizBest: 0,
 
       signIn: (email, uid) => set({ user: { email, uid, mode: uid ? 'cloud' : 'local' } }),
       signOut: () => set({ user: null, bracelet: 'disconnected' }),
@@ -88,8 +93,9 @@ export const useStore = create<State>()(
         set((s) => ({ history: [{ ...e, id: uid(), at: Date.now(), profileId }, ...s.history].slice(0, 200) }))
       },
       clearHistory: () => set({ history: [] }),
+      addQuizResult: (score) => set((s) => ({ quizResults: [{ at: Date.now(), score }, ...s.quizResults].slice(0, 50), quizBest: Math.max(s.quizBest, score) })),
     }),
-    { name: 'gelang-asistif', version: 1 },
+    { name: 'gelang-asistif', version: 2, migrate: (st) => ({ quizResults: [], quizBest: 0, ...(st as object) }) },
   ),
 )
 

@@ -10,11 +10,14 @@ import Login from './screens/Login'
 import Profile from './screens/Profile'
 import Connect from './screens/Connect'
 import Guidebook from './screens/Guidebook'
+import Quiz from './screens/Quiz'
+import Flash from './components/Flash'
 
 export default function App() {
   return (
     <LangProvider>
       <BrowserRouter>
+        <Flash />
         <Routes>
           <Route path={routes.home} element={<Home />} />
           <Route path={routes.settings} element={<Settings />} />
@@ -24,6 +27,7 @@ export default function App() {
           <Route path={routes.profile} element={<Profile />} />
           <Route path={routes.connect} element={<Connect />} />
           <Route path={routes.training} element={<Training />} />
+          <Route path={routes.quiz} element={<Quiz />} />
           <Route path={routes.guidebook} element={<Guidebook />} />
           <Route path="*" element={<Home />} />
         </Routes>

@@ -7,5 +7,6 @@ export const routes = {
   profile: '/profil',
   connect: '/sambungkan',
   training: '/latihan',
+  quiz: '/latihan/kuis',
   guidebook: '/panduan',
 } as const

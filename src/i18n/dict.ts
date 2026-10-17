@@ -129,6 +129,13 @@ const id = {
     nameRec: 'Pengenalan nama', soundRec: 'Pengenalan bunyi', hears: 'Terdengar', nameOff: 'Tidak tersedia di peramban ini', soundOff: 'Model gagal dimuat',
     whatItHears: 'Coba: panggil nama anak, bunyikan bel atau sirine (bisa dari Mode demo di ponsel lain).',
   },
+  quiz: {
+    title: 'Tebak kode', subtitle: 'Rasakan getaran, lihat warna, pilih artinya', teaser: 'Permainan 5 ronde dengan bintang',
+    intro: 'Gelang akan bergetar dan menyala. Tebak apa artinya!', start: 'Mulai main', back: 'Kembali ke latihan',
+    round: 'Ronde', question: 'Apa arti kode ini?', again: 'Rasakan lagi', correct: 'Benar! ⭐', wrong: 'Belum tepat. Lihat jawabannya.',
+    next: 'Ronde berikutnya', finish: 'Lihat hasil', perfect: 'Hebat! Semua benar!', good: 'Bagus! Terus berlatih.', tryAgain: 'Ayo coba lagi!',
+    playAgain: 'Main lagi', best: 'Rekor',
+  },
   bracelet: { stop: 'Hentikan getaran', idle: 'Gelang siap', playing: 'Gelang bergetar', noVibrate: 'Getaran nyata hanya terasa di ponsel Android.' },
   training: { subtitle: 'Tekan kode, rasakan getaran, lihat warna', tryIt: 'Coba kode', soundHint: 'Agar pendamping dan teman mendengar bunyi aslinya' },
 }
@@ -261,6 +268,13 @@ const en: typeof id = {
     privacy: 'Recognises the child’s name and sound types (bell, alarm, siren, horn, doorbell, knock). Names via the Google speech service, sounds on the phone. Nothing is recorded.',
     nameRec: 'Name recognition', soundRec: 'Sound recognition', hears: 'Hearing', nameOff: 'Not available in this browser', soundOff: 'Model failed to load',
     whatItHears: 'Try: call the child’s name, ring a bell or play a siren (e.g. from Demo mode on another phone).',
+  },
+  quiz: {
+    title: 'Guess the code', subtitle: 'Feel the vibration, see the colour, pick the meaning', teaser: '5-round game with stars',
+    intro: 'The bracelet will vibrate and light up. Guess what it means!', start: 'Start playing', back: 'Back to training',
+    round: 'Round', question: 'What does this code mean?', again: 'Feel it again', correct: 'Correct! ⭐', wrong: 'Not quite. See the answer.',
+    next: 'Next round', finish: 'See results', perfect: 'Amazing! All correct!', good: 'Well done! Keep practising.', tryAgain: 'Let’s try again!',
+    playAgain: 'Play again', best: 'Best',
   },
   bracelet: { stop: 'Stop vibration', idle: 'Bracelet ready', playing: 'Bracelet vibrating', noVibrate: 'Real vibration is felt only on an Android phone.' },
   training: { subtitle: 'Press a code, feel the vibration, see the colour', tryIt: 'Try a code', soundHint: 'So carers and classmates hear the real sound' },
