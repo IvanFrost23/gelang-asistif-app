@@ -23,7 +23,7 @@ export default function Training() {
   return (
     <Screen title={t.screens.training} subtitle={t.training.subtitle}>
       <section className="card hero">
-        <Bracelet state={state} size={190} />
+        <Bracelet state={state} size={250} />
         <p style={{ textAlign: 'center', marginTop: 8 }}>{state.signal ? t.bracelet.playing : t.bracelet.idle}</p>
       </section>
       <h2 style={{ margin: '4px 0 0', fontSize: 16 }}>{t.training.tryIt}</h2>

@@ -12,9 +12,9 @@ export default function Bracelet({ state, size = 240 }: Props) {
   const active = !!signal
   const led = active ? signal!.color : '#a99cf2'
   const cls = ['bracelet', on ? 'shaking' : '', signal?.blink ? 'blinking' : '', active ? 'active' : 'idle'].join(' ')
-  const h = size * 1.25
+  const h = size * 0.8
   return (
-    <svg className={cls} width={size} height={h} viewBox="0 0 200 250" role="img" aria-label="Gelang">
+    <svg className={cls} width={size} height={h} viewBox="0 0 250 200" role="img" aria-label="Gelang">
       <defs>
         <linearGradient id="strapV" x1="0" y1="0" x2="1" y2="0">
           <stop offset="0" stopColor="#8d7fe6" />
@@ -52,13 +52,14 @@ export default function Bracelet({ state, size = 240 }: Props) {
           <feGaussianBlur stdDeviation="9" />
         </filter>
         <filter id="bodyShadow" x="-40%" y="-20%" width="180%" height="150%">
-          <feDropShadow dx="0" dy="10" stdDeviation="8" floodColor="#120f2a" floodOpacity=".45" />
+          <feDropShadow dx="-10" dy="0" stdDeviation="8" floodColor="#120f2a" floodOpacity=".45" />
         </filter>
         <filter id="strapShadowV" x="-40%" y="-10%" width="180%" height="130%">
-          <feDropShadow dx="0" dy="6" stdDeviation="6" floodColor="#2a2060" floodOpacity=".25" />
+          <feDropShadow dx="-6" dy="0" stdDeviation="6" floodColor="#2a2060" floodOpacity=".25" />
         </filter>
       </defs>
 
+      <g transform="translate(0 200) rotate(-90)">
       {/* ремешок */}
       <g filter="url(#strapShadowV)">
         <rect x="66" y="0" width="68" height="250" rx="34" fill="url(#strapV)" />
@@ -92,6 +93,7 @@ export default function Bracelet({ state, size = 240 }: Props) {
         <rect x="62" y="72" width="76" height="106" rx="38" fill="none" stroke="#fff" strokeOpacity=".10" />
         {/* боковая кнопка на корпусе */}
         <rect x="146" y="112" width="5" height="22" rx="2.5" fill="#3a3466" />
+      </g>
       </g>
     </svg>
   )
