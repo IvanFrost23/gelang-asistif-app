@@ -35,7 +35,8 @@ export default function Login() {
           setNote(t.login.created)
         } else throw err
       }
-      done() // onAuthStateChanged в sync.ts запишет пользователя в store
+      // Профили могут приехать из Firestore; главная сама предложит создать профиль, если их нет.
+      nav(routes.home, { replace: true })
     } catch (err) {
       const code = (err as { code?: string }).code ?? ''
       if (code === 'auth/wrong-password') { setNote(t.login.wrongPassword); setBusy(false); return }
