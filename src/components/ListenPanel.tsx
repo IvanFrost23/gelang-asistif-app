@@ -20,6 +20,7 @@ export default function ListenPanel() {
           {state.lastClass ? ` · ${state.lastClass}` : ''}
         </p>
       )}
+      {state.status === 'starting' && <p className="sub">{t.listen.loading}</p>}
       {state.status === 'denied' && <p>{t.listen.denied}</p>}
       {state.status === 'unsupported' && <p>{t.listen.unsupported}</p>}
       {state.status === 'error' && <p>{t.listen.error}</p>}

@@ -100,8 +100,8 @@ const id = {
   },
   listen: {
     title: 'Mode Dengar',
-    status: { idle: 'Tidak aktif', starting: 'Menyiapkan…', listening: 'Mendengarkan', denied: 'Mikrofon ditolak', unsupported: 'Tidak didukung', error: 'Gagal' },
-    start: 'Mulai Dengar', stop: 'Berhenti', waiting: 'Menunggu suara…',
+    status: { idle: 'Tidak aktif', starting: 'Memuat model…', listening: 'Mendengarkan', denied: 'Mikrofon ditolak', unsupported: 'Tidak didukung', error: 'Gagal' },
+    start: 'Mulai Dengar', stop: 'Berhenti', waiting: 'Menunggu suara…', loading: 'Pertama kali: mengunduh model pengenalan suara (16 MB), tunggu sebentar.',
     denied: 'Izin mikrofon ditolak. Buka pengaturan situs di Chrome dan izinkan mikrofon.',
     unsupported: 'Peramban ini tidak mendukung mikrofon. Gunakan Chrome di Android.',
     error: 'Model pengenalan suara gagal dimuat. Periksa koneksi lalu coba lagi.',
@@ -211,8 +211,8 @@ const en: typeof id = {
   },
   listen: {
     title: 'Listen mode',
-    status: { idle: 'Off', starting: 'Starting…', listening: 'Listening', denied: 'Mic denied', unsupported: 'Unsupported', error: 'Failed' },
-    start: 'Start listening', stop: 'Stop', waiting: 'Waiting for sound…',
+    status: { idle: 'Off', starting: 'Loading model…', listening: 'Listening', denied: 'Mic denied', unsupported: 'Unsupported', error: 'Failed' },
+    start: 'Start listening', stop: 'Stop', waiting: 'Waiting for sound…', loading: 'First time: downloading the sound model (16 MB), please wait.',
     denied: 'Microphone permission was denied. Open the site settings in Chrome and allow the microphone.',
     unsupported: 'This browser has no microphone support. Use Chrome on Android.',
     error: 'The sound model failed to load. Check the connection and try again.',

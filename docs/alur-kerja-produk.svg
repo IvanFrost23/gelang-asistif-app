@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="620" viewBox="0 0 1400 620" font-family="DejaVu Sans, Noto Sans, sans-serif">
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#5f52c8"/></marker>
+    <style>
+      .box{fill:#fff;stroke:#7c6fe0;stroke-width:3;rx:18}
+      .title{font-size:22px;font-weight:700;fill:#1f1b3a}
+      .sub{font-size:15px;fill:#6f6a8a}
+      .arrow{stroke:#5f52c8;stroke-width:3;fill:none;marker-end:url(#arr)}
+      .lbl{font-size:14px;fill:#5f52c8;font-weight:700}
+      .step{font-size:14px;font-weight:700;fill:#fff}
+    </style>
+  </defs>
+  <rect width="1400" height="620" fill="#f3f1fb"/>
+  <text x="700" y="48" text-anchor="middle" font-size="30" font-weight="700" fill="#5f52c8">Alur Kerja Produk — Gelang Asistif Getar dan Cahaya</text>
+
+  <!-- 1 Suara -->
+  <g transform="translate(40,120)">
+    <rect class="box" width="230" height="150"/>
+    <circle cx="26" cy="26" r="16" fill="#7c6fe0"/><text class="step" x="26" y="31" text-anchor="middle">1</text>
+    <text class="title" x="115" y="68" text-anchor="middle">Bunyi penting</text>
+    <text class="sub" x="115" y="96" text-anchor="middle">nama dipanggil, bel sekolah,</text>
+    <text class="sub" x="115" y="118" text-anchor="middle">bel pintu, alarm bahaya</text>
+  </g>
+  <!-- 2 Mikrofon ponsel -->
+  <g transform="translate(320,120)">
+    <rect class="box" width="230" height="150"/>
+    <circle cx="26" cy="26" r="16" fill="#7c6fe0"/><text class="step" x="26" y="31" text-anchor="middle">2</text>
+    <text class="title" x="115" y="68" text-anchor="middle">Mikrofon ponsel</text>
+    <text class="sub" x="115" y="96" text-anchor="middle">ponsel pendamping</text>
+    <text class="sub" x="115" y="118" text-anchor="middle">di dekat anak</text>
+  </g>
+  <!-- 3 Aplikasi -->
+  <g transform="translate(600,90)">
+    <rect class="box" width="300" height="300"/>
+    <circle cx="26" cy="26" r="16" fill="#7c6fe0"/><text class="step" x="26" y="31" text-anchor="middle">3</text>
+    <text class="title" x="165" y="60" text-anchor="middle">Aplikasi pendamping</text>
+    <rect x="24" y="84" width="252" height="58" rx="12" fill="#ece8fb"/>
+    <text x="150" y="108" text-anchor="middle" font-size="15" font-weight="700" fill="#1f1b3a">Pengenalan nama</text>
+    <text x="150" y="130" text-anchor="middle" class="sub">Web Speech API (id-ID)</text>
+    <rect x="24" y="152" width="252" height="58" rx="12" fill="#ece8fb"/>
+    <text x="150" y="176" text-anchor="middle" font-size="15" font-weight="700" fill="#1f1b3a">Pengenalan jenis bunyi</text>
+    <text x="150" y="198" text-anchor="middle" class="sub">YAMNet di ponsel (offline)</text>
+    <rect x="24" y="220" width="252" height="58" rx="12" fill="#ece8fb"/>
+    <text x="150" y="244" text-anchor="middle" font-size="15" font-weight="700" fill="#1f1b3a">Penyaringan</text>
+    <text x="150" y="266" text-anchor="middle" class="sub">jenis aktif · kepekaan · jeda 3 dtk</text>
+  </g>
+  <!-- 4 Bluetooth -> Gelang -->
+  <g transform="translate(950,120)">
+    <rect class="box" width="230" height="150"/>
+    <circle cx="26" cy="26" r="16" fill="#7c6fe0"/><text class="step" x="26" y="31" text-anchor="middle">4</text>
+    <text class="title" x="115" y="68" text-anchor="middle">Gelang</text>
+    <text class="sub" x="115" y="96" text-anchor="middle">ESP32 menerima kode</text>
+    <text class="sub" x="115" y="118" text-anchor="middle">lewat Bluetooth</text>
+  </g>
+  <!-- 5 Getar + LED -->
+  <g transform="translate(950,320)">
+    <rect class="box" width="230" height="190"/>
+    <circle cx="26" cy="26" r="16" fill="#7c6fe0"/><text class="step" x="26" y="31" text-anchor="middle">5</text>
+    <text class="title" x="130" y="66" text-anchor="middle">Getar + Lampu</text>
+    <g transform="translate(26,90)">
+      <circle cx="10" cy="8" r="9" fill="#2f6cf6"/><text x="26" y="13" font-size="13" fill="#1f1b3a">Nama · 2 getar pendek</text>
+      <circle cx="10" cy="34" r="9" fill="#e5383b"/><text x="26" y="39" font-size="13" fill="#1f1b3a">Bahaya · panjang berulang</text>
+      <circle cx="10" cy="60" r="9" fill="#f5b400"/><text x="26" y="65" font-size="13" fill="#1f1b3a">Bel · 1 getar sedang</text>
+      <circle cx="10" cy="86" r="9" fill="#22c55e"/><text x="26" y="91" font-size="13" fill="#1f1b3a">Rumah · 3 getar pendek</text>
+    </g>
+  </g>
+  <!-- 6 Anak -->
+  <g transform="translate(600,430)">
+    <rect class="box" width="300" height="130"/>
+    <circle cx="26" cy="26" r="16" fill="#7c6fe0"/><text class="step" x="26" y="31" text-anchor="middle">6</text>
+    <text class="title" x="165" y="62" text-anchor="middle">Anak merespons</text>
+    <text class="sub" x="150" y="90" text-anchor="middle">menoleh · berhenti · mengikuti kegiatan ·</text>
+    <text class="sub" x="150" y="112" text-anchor="middle">memberi tahu orang tua</text>
+  </g>
+  <!-- Pendamping -->
+  <g transform="translate(40,330)">
+    <rect class="box" width="510" height="110" stroke-dasharray="8 6"/>
+    <text class="title" x="255" y="42" text-anchor="middle">Pendamping (orang tua / guru)</text>
+    <text class="sub" x="255" y="70" text-anchor="middle">masuk · profil &amp; nama panggilan · pengaturan · mode latihan ·</text>
+    <text class="sub" x="255" y="92" text-anchor="middle">panggil manual · riwayat · buku panduan</text>
+  </g>
+
+  <!-- arrows -->
+  <path class="arrow" d="M270 195 H318"/>
+  <path class="arrow" d="M550 195 H598"/>
+  <path class="arrow" d="M900 195 H948"/><text class="lbl" x="924" y="182" text-anchor="middle">kode</text>
+  <path class="arrow" d="M1065 270 V318"/>
+  <path class="arrow" d="M1065 510 V540 H910"/>
+  <path class="arrow" d="M550 385 H575 V240 H598"/><text class="lbl" x="562" y="300" text-anchor="middle" transform="rotate(-90 562 300)">mengatur</text>
+  <path class="arrow" d="M750 390 V428"/><text class="lbl" x="790" y="414">panggil manual</text>
+</svg>
