@@ -9,7 +9,7 @@ export const CLASS_TO_CATEGORY: Record<string, Category> = {
   'Alarm': 'danger', 'Buzzer': 'danger', 'Train horn': 'danger', 'Foghorn': 'danger',
   // Школьный звонок, сигнал времени
   'Bell': 'bell', 'Church bell': 'bell', 'Chime': 'bell', 'Alarm clock': 'bell', 'Bicycle bell': 'bell', 'Ringtone': 'bell',
-  'Telephone bell ringing': 'bell', 'Ding': 'bell', 'Wind chime': 'bell', 'Jingle bell': 'bell', 'Tubular bells': 'bell', 'Whistle': 'bell',
+  'Telephone bell ringing': 'bell', 'Telephone': 'bell', 'Wind chime': 'bell', 'Jingle bell': 'bell', 'Tubular bells': 'bell', 'Whistle': 'bell',
   // Домашние звуки
-  'Doorbell': 'home', 'Ding-dong': 'home', 'Knock': 'home', 'Door': 'home', 'Tap': 'home', 'Sliding door': 'home',
+  'Doorbell': 'home', 'Ding-dong': 'home', 'Ding': 'home', 'Knock': 'home', 'Door': 'home', 'Tap': 'home', 'Sliding door': 'home',
 }

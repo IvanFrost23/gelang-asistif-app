@@ -85,6 +85,8 @@ home:   { color: '#22c55e', blink: false, pattern: [120, 90, 120, 90, 120],   re
 
 Режим тренировки пишет в историю напрямую, минуя фильтры, чтобы ребёнок мог пробовать любой код.
 
+**Демо-звуки.** `src/audio/demoSounds.ts` синтезирует звуки через Web Audio API без файлов: школьный звонок (20 ударов с партиалами колокола), сирена (пила с качанием 600–1300 Гц), дверной звонок (динь-дон E5→C5), имя ребёнка через SpeechSynthesis на id-ID. Симулятор сначала играет звук, через ≤1.2 с отправляет событие в конвейер. Функции принимают BaseAudioContext, поэтому их можно рендерить офлайн для тестов.
+
 ## 7. Режим Dengar
 
 Хук useListen запрашивает один MediaStream и делит его между двумя распознавателями.
@@ -96,10 +98,10 @@ home:   { color: '#22c55e', blink: false, pattern: [120, 90, 120, 90, 120],   re
 | Категория | Классы YAMNet |
 |---|---|
 | danger | Siren, Civil defense siren, Police car (siren), Ambulance (siren), Fire engine (siren), Fire alarm, Smoke detector, Vehicle horn, Car alarm, Air horn, Emergency vehicle, Alarm, Buzzer, Train horn, Foghorn |
-| bell | Bell, Church bell, Chime, Alarm clock, Bicycle bell, Ringtone, Telephone bell ringing, Ding, Wind chime, Jingle bell, Tubular bells, Whistle |
-| home | Doorbell, Ding-dong, Knock, Door, Tap, Sliding door |
+| bell | Bell, Church bell, Chime, Alarm clock, Bicycle bell, Ringtone, Telephone, Telephone bell ringing, Wind chime, Jingle bell, Tubular bells, Whistle |
+| home | Doorbell, Ding-dong, Ding, Knock, Door, Tap, Sliding door |
 
-Проверка без железа: Chrome с флагами `--use-fake-device-for-media-stream --use-file-for-fake-audio-capture=<wav>`; синтетический колокольчик распознаётся как Ding и Beep, качающийся тон как Synthesizer с редкими Alarm.
+Проверка без железа: Chrome с флагами `--use-fake-device-for-media-stream --use-file-for-fake-audio-capture=<wav>`. Демо-звуки из `src/audio/demoSounds.ts`, отрендеренные через OfflineAudioContext, модель распознаёт как Ringtone/Telephone (школьный звонок → bell), Siren 74–78% (→ danger) и Ding (дверной звонок → home).
 
 ## 8. Хранение и Firebase
 

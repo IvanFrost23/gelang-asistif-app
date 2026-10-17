@@ -99,7 +99,7 @@ Mode Dengar membuat aplikasi mendengarkan sekitar lewat mikrofon ponsel dan meng
 
 1. Di Beranda, tekan **Mulai Dengar**. Saat pertama kali, aplikasi mengunduh model pengenalan suara (16 MB); tunggu sampai status menjadi **Mendengarkan**. Berikutnya model sudah tersimpan di ponsel.
 2. Letakkan ponsel di dekat anak, misalnya di meja kelas atau di saku pendamping, dengan aplikasi tetap terbuka dan layar menyala.
-3. Panel menampilkan kata yang terdengar dan jenis bunyi yang dikenali. Ketika nama anak disebut atau terdengar bel, alarm, klakson, bel pintu, atau ketukan, aplikasi mengirim kode ke gelang dan mencatatnya di **Riwayat**.
+3. Panel menampilkan dua baris: **Pengenalan nama** (kata yang terdengar) dan **Pengenalan bunyi** (jenis bunyi yang terdengar saat ini, misalnya Siren 74%). Titik hijau berarti pengenal itu aktif. Ketika nama anak disebut atau terdengar bel, alarm, klakson, bel pintu, atau ketukan, aplikasi mengirim kode ke gelang dan mencatatnya di **Riwayat**.
 4. Tekan **Berhenti** untuk mematikan mode Dengar.
 
 Hal yang perlu diketahui:
@@ -114,7 +114,7 @@ Hal yang perlu diketahui:
 
 Jika pengenalan suara gagal atau pendamping ingin memanggil anak langsung, tekan tombol besar **Panggil anak sekarang** di Beranda. Gelang bergetar dengan kode "Nama dipanggil" (biru, 2 getaran pendek).
 
-**Mode demo** dipakai untuk presentasi tanpa mikrofon: tekan **Tampilkan**, lalu tekan salah satu jenis suara, atau tekan **Jalankan rangkaian demo** supaya aplikasi memutar contoh suara satu per satu. Semua kejadian demo juga masuk ke Riwayat.
+**Mode demo** dipakai untuk presentasi: tekan **Tampilkan**, lalu tekan salah satu jenis suara, atau tekan **Jalankan rangkaian demo** supaya aplikasi memutar contoh satu per satu. Dengan saklar **Putar suara** menyala, ponsel membunyikan suara yang sesuai lewat speaker: bel sekolah, sirine, bel pintu, dan nama anak yang diucapkan. Jadi di presentasi bisa dipakai dua ponsel: satu memutar demo, satu lagi dalam Mode Dengar mengenali suaranya. Semua kejadian demo juga masuk ke Riwayat.
 
 ## 11. Mode latihan
 
