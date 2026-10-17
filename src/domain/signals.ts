@@ -19,6 +19,19 @@ export const SIGNALS: Record<Category, Signal> = {
 export const CATEGORIES: Category[] = ['name', 'danger', 'bell', 'home']
 
 /** Полный паттерн с учётом повторов, с паузой 400 мс между повторами. */
+/** Длительность полноэкранной вспышки для кода. Опасность держится дольше. */
+export function flashMs(c: Category): number { return c === 'danger' ? 2600 : 1500 }
+
+/**
+ * Сколько LED браслета остаётся гореть после окончания вибрации.
+ * Короткие паттерны (0.4–0.6 с) целиком прячутся под вспышкой, поэтому
+ * свет держится так, чтобы после её исчезновения его было видно ещё ~1.5 с.
+ */
+export function ledHoldMs(s: Signal): number {
+  const total = fullPattern(s).reduce((a, b) => a + b, 0)
+  return Math.max(800, flashMs(s.category) - total + 1500)
+}
+
 export function fullPattern(s: Signal): number[] {
   const out: number[] = []
   for (let i = 0; i < s.repeat; i++) {

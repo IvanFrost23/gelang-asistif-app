@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useRef, useState } from 'react'
-import { fullPattern, SIGNALS, type Category, type Signal } from '../domain/signals'
+import { fullPattern, ledHoldMs, SIGNALS, type Category, type Signal } from '../domain/signals'
 import { useVibrate } from './useVibrate'
 
 export interface BraceletState {
@@ -35,7 +35,9 @@ export function useBraceletPlayer() {
       timers.current.push(window.setTimeout(() => setState({ signal: s, on }), t))
       t += ms
     })
-    timers.current.push(window.setTimeout(() => setState({ signal: null, on: false }), t + 200))
+    // Мотор выключен, но LED продолжает гореть (как у настоящего браслета), затем гаснет.
+    timers.current.push(window.setTimeout(() => setState({ signal: s, on: false }), t))
+    timers.current.push(window.setTimeout(() => setState({ signal: null, on: false }), t + ledHoldMs(s)))
   }, [clear, vibrate])
 
   useEffect(() => clear, [clear])

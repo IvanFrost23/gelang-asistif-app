@@ -1,7 +1,7 @@
 # Panduan Pengguna Aplikasi Gelang Asistif
 
 **Gelang Asistif Getar dan Cahaya** — penanda panggilan dan suara penting untuk anak tunarungu.
-Versi dokumen 1.2 (17 Oktober 2026). Panduan ini ditujukan untuk orang tua dan guru (pendamping).
+Versi dokumen 1.3 (17 Oktober 2026). Panduan ini ditujukan untuk orang tua dan guru (pendamping).
 
 Alamat aplikasi: **https://gelang-asistif-3023.web.app**
 
@@ -121,7 +121,7 @@ Hal yang perlu diketahui:
 
 Jika pengenalan suara gagal atau pendamping ingin memanggil anak langsung, tekan tombol besar **Panggil anak sekarang** di Beranda. Ponsel mengucapkan nama panggilan anak, dan gelang bergetar dengan kode "Nama dipanggil" (biru, 2 getaran pendek).
 
-**Mode demo** dipakai untuk presentasi: tekan **Tampilkan**, lalu tekan salah satu jenis suara, atau tekan **Jalankan rangkaian demo** supaya aplikasi memutar contoh satu per satu. Dengan saklar **Putar suara** menyala, ponsel membunyikan suara yang sesuai lewat speaker: bel sekolah, sirine, bel pintu, dan nama anak yang diucapkan. Jadi di presentasi bisa dipakai dua ponsel: satu memutar demo, satu lagi dalam Mode Dengar mengenali suaranya. Semua kejadian demo juga masuk ke Riwayat.
+**Mode demo** dipakai untuk presentasi: tekan **Tampilkan**, lalu tekan salah satu jenis suara, atau tekan **Jalankan rangkaian demo** supaya aplikasi memutar contoh satu per satu. Dengan saklar **Putar suara** menyala, ponsel membunyikan suara yang sesuai lewat speaker: bel sekolah, sirine, bel pintu, dan nama anak yang diucapkan. Jadi di presentasi bisa dipakai dua ponsel: satu memutar demo, satu lagi dalam Mode Dengar mengenali suaranya. Semua kejadian demo juga masuk ke Riwayat. Saat sinyal diterima, layar ponsel berkilat dengan warna kode, lalu gelang di layar tetap menyala beberapa detik setelah getaran berhenti, sehingga reaksi gelang tetap terlihat setelah kilatan hilang.
 
 ## 11. Mode latihan
 

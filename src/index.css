@@ -192,7 +192,7 @@ a.row:active { transform: scale(.995); background: var(--surface-2); }
 
 /* Браслет */
 .bracelet { display: block; margin: 0 auto; overflow: visible; }
-.bracelet .led { transition: fill .12s; }
+.bracelet .led { transition: fill .12s, filter .4s; }
 .bracelet .led-glow { transition: fill .12s, opacity .2s; }
 .bracelet.active .led { filter: drop-shadow(0 0 6px currentColor) brightness(1.15); }
 .bracelet.shaking .body { animation: shake .09s linear infinite; }

@@ -83,7 +83,7 @@ React 18 + Vite 6 + TypeScript (Vite 6 и React 18 закреплены из-з�
 
 ## Запуск
 
-Сайт: https://gelang-asistif-3023.web.app (Chrome на Android даёт полный набор функций). APK: `docs/gelang-asistif.apk`, публикуется в GitHub Releases репозитория https://github.com/IvanFrost23/gelang-asistif-releases (ссылка «latest» в `src/app/links.ts`, текущая версия 1.2). Новая версия: `gh release create v1.x docs/gelang-asistif.apk --repo IvanFrost23/gelang-asistif-releases`.
+Сайт: https://gelang-asistif-3023.web.app (Chrome на Android даёт полный набор функций). APK: `docs/gelang-asistif.apk`, публикуется в GitHub Releases репозитория https://github.com/IvanFrost23/gelang-asistif-releases (ссылка «latest» в `src/app/links.ts`, текущая версия 1.3). Новая версия: `gh release create v1.x docs/gelang-asistif.apk --repo IvanFrost23/gelang-asistif-releases`.
 
 ```bash
 npm install

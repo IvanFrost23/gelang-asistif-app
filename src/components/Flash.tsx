@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { onAccepted } from '../events/pipeline'
-import { SIGNALS, type Category } from '../domain/signals'
+import { flashMs, SIGNALS, type Category } from '../domain/signals'
 import { useT } from '../i18n'
 
 export const CATEGORY_ICON: Record<Category, string> = { name: '🙋', danger: '⚠️', bell: '🔔', home: '🚪' }
@@ -12,8 +12,7 @@ export default function Flash() {
   useEffect(() => onAccepted((e) => { setCat(null); requestAnimationFrame(() => setCat(e.category)) }), [])
   useEffect(() => {
     if (!cat) return
-    const ms = cat === 'danger' ? 2600 : 1500
-    const id = setTimeout(() => setCat(null), ms)
+    const id = setTimeout(() => setCat(null), flashMs(cat))
     return () => clearTimeout(id)
   }, [cat])
   if (!cat) return null

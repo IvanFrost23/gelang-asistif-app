@@ -1,6 +1,6 @@
 # Техническая документация: приложение Gelang Asistif
 
-Версия 1.2, 17 октября 2026. Репозиторий: https://github.com/IvanFrost23/gelang-asistif-app. Сайт: https://gelang-asistif-3023.web.app. Документ описывает реализованное приложение после всех 12 шагов плана.
+Версия 1.3, 17 октября 2026. Репозиторий: https://github.com/IvanFrost23/gelang-asistif-app. Сайт: https://gelang-asistif-3023.web.app. Документ описывает реализованное приложение после всех 12 шагов плана.
 
 ## 1. Назначение и границы
 
@@ -123,6 +123,8 @@ home:   { color: '#22c55e', blink: false, pattern: [120, 90, 120, 90, 120],   re
 
 ## 7b. Вспышка и игра
 
+Вспышка и браслет на экране слушают один и тот же `onAccepted`. Длительность вспышки задаёт `flashMs()` в `src/domain/signals.ts` (1.5 с, опасность 2.6 с). Короткие паттерны (имя 0.42 с, звонок 0.45 с, дом 0.54 с) полностью укладывались под вспышку, и казалось, что браслет на них не реагирует. Поэтому после окончания вибрации LED остаётся гореть ещё `ledHoldMs()` (так, чтобы после исчезновения вспышки свет был виден около 1.5 с), а дрожание корпуса идёт только в фазах мотора. Это соответствует поведению реального браслета, где светодиод держится дольше вибрации.
+
 `Flash.tsx` подписан на конвейер и заливает экран цветом кода с иконкой и фразой из guidebook на 1.5 с (2.6 с с миганием для опасности). `Quiz.tsx` («Tebak kode»): 5 раундов, случайный код проигрывается на браслете, четыре варианта с иконками, звёзды и рекорд в `quizResults`/`quizBest`.
 
 ## 8. Хранение и Firebase
@@ -155,7 +157,7 @@ npm run build && npx cap sync android
 cd android && ./gradlew assembleDebug      # android/app/build/outputs/apk/debug/app-debug.apk
 ```
 
-Релизная сборка подписывается ключом из `android/keystore.properties` (не в git), команда `./gradlew assembleRelease`. Готовый файл копируется в `docs/gelang-asistif.apk` и публикуется в GitHub Releases публичного репозитория `gelang-asistif-releases` (Firebase Hosting на тарифе Spark запрещает исполняемые файлы). Ссылка задана в `src/app/links.ts`. В манифесте добавлены RECORD_AUDIO, MODIFY_AUDIO_SETTINGS и VIBRATE; Capacitor сам запрашивает разрешение микрофона при getUserMedia. Иконки сгенерированы из `public/icon-512.png` в mipmap-*. Ограничение: Android WebView не поддерживает SpeechRecognition, поэтому в APK распознавание имени недоступно (панель показывает «Tidak tersedia»), а YAMNet и вибрация работают. Подпись: самоподписанный ключ `keystore/gelang.jks` (вне git), пароли в `android/keystore.properties` (вне git); applicationId `id.ac.unesa.gelangasistif`, versionName 1.2 (versionCode 2), compileSdk 34. Релизы: https://github.com/IvanFrost23/gelang-asistif-releases, кнопка в приложении ведёт на ссылку `releases/latest/download/gelang-asistif.apk`, поэтому при новом релизе код менять не нужно.
+Релизная сборка подписывается ключом из `android/keystore.properties` (не в git), команда `./gradlew assembleRelease`. Готовый файл копируется в `docs/gelang-asistif.apk` и публикуется в GitHub Releases публичного репозитория `gelang-asistif-releases` (Firebase Hosting на тарифе Spark запрещает исполняемые файлы). Ссылка задана в `src/app/links.ts`. В манифесте добавлены RECORD_AUDIO, MODIFY_AUDIO_SETTINGS и VIBRATE; Capacitor сам запрашивает разрешение микрофона при getUserMedia. Иконки сгенерированы из `public/icon-512.png` в mipmap-*. Ограничение: Android WebView не поддерживает SpeechRecognition, поэтому в APK распознавание имени недоступно (панель показывает «Tidak tersedia»), а YAMNet и вибрация работают. Подпись: самоподписанный ключ `keystore/gelang.jks` (вне git), пароли в `android/keystore.properties` (вне git); applicationId `id.ac.unesa.gelangasistif`, versionName 1.3 (versionCode 3), compileSdk 34. Релизы: https://github.com/IvanFrost23/gelang-asistif-releases, кнопка в приложении ведёт на ссылку `releases/latest/download/gelang-asistif.apk`, поэтому при новом релизе код менять не нужно.
 
 ### Отключённое масштабирование
 

@@ -60,7 +60,7 @@ export default function Help() {
             <li key={m.nim}><span className="avatar">{m.name.split(' ').slice(0, 2).map((w) => w[0]).join('')}</span><span className="grow"><div className="title">{m.name}</div><div className="sub">NIM {m.nim}</div></span></li>
           ))}
         </ul>
-        <p className="hint" style={{ marginTop: 12 }}>{h.version} 1.2 · {t.help.aboutText}</p>
+        <p className="hint" style={{ marginTop: 12 }}>{h.version} 1.3 · {t.help.aboutText}</p>
       </section>
     </Screen>
   )
