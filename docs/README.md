@@ -4,8 +4,11 @@
 |---|---|
 | `tugas-teknologi-asistif.pdf` / `.txt` | Книга проекта группы (исходник) |
 | `prototype-card.jpg` | Карточка прототипа браслета и приложения |
-| `screens-step1.png` | Скриншоты каркаса после шага 1 |
-| `manual/panduan-pengguna.md` / `.pdf` | Руководство пользователя на индонезийском для родителя и учителя плюс карточка кодов для ребёнка |
-| `dev/dokumentasi-teknis.md` / `.pdf` | Техническая документация: стек, структура, домен сигналов, конвейер событий, режим Dengar, запуск |
+| `alur-kerja-produk.svg` / `.png` | Схема «Alur Kerja Produk» для пустого места в книге |
+| `screens/` | 15 скриншотов всех экранов (ID), `screens-all.png` контактный лист |
+| `bracelet-signals.png` | Браслет в четырёх кодах |
+| `screens-step*.png` | Промежуточные скриншоты по шагам плана |
+| `manual/panduan-pengguna.md` / `.pdf` | Руководство пользователя на индонезийском плюс карточка кодов для ребёнка |
+| `dev/dokumentasi-teknis.md` / `.pdf` | Техническая документация |
 
-PDF пересобираются командой `scripts/build-docs.sh`. Документы обновляются по мере готовности экранов (шаг 12 плана).
+PDF пересобираются командой `scripts/build-docs.sh`, скриншоты командой `node scripts/screenshots.mjs`.

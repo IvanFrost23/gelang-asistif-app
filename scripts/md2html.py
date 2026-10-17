@@ -1,6 +1,10 @@
-import sys, markdown
+import sys, os, re, markdown
 src, dst, title = sys.argv[1:4]
-body = markdown.markdown(open(src, encoding='utf-8').read(), extensions=['tables', 'fenced_code'])
+base = os.path.dirname(os.path.abspath(src))
+text = open(src, encoding='utf-8').read()
+text = re.sub(r'\]\((?!https?://|/)([^)]+\.(?:png|jpg|svg))\)', lambda m: '](file://' + os.path.join(base, m.group(1)) + ')', text)
+text = re.sub(r'src="(?!https?://|/|file://)([^"]+)"', lambda m: 'src="file://' + os.path.join(base, m.group(1)) + '"', text)
+body = markdown.markdown(text, extensions=['tables', 'fenced_code'])
 css = """
 @page { size: A4; margin: 18mm 16mm; }
 body { font-family: 'DejaVu Sans', 'Noto Sans', sans-serif; font-size: 11pt; line-height: 1.5; color: #1f1b3a; max-width: 100%; }
@@ -12,5 +16,8 @@ th { background: #ece8fb; }
 code { background: #f3f1fb; padding: 1px 4px; border-radius: 4px; font-size: 9.5pt; }
 pre { background: #f3f1fb; padding: 10px; border-radius: 8px; font-size: 9.5pt; white-space: pre-wrap; }
 hr { page-break-after: always; border: 0; }
+img { max-width: 100%; border: 1px solid #d9d4ee; border-radius: 8px; }
+.shots img { width: 31%; margin: 0 1% 8px 0; }
+figure { margin: 10px 0; text-align: center; } figcaption { font-size: 9pt; color: #6f6a8a; }
 """
 open(dst, 'w', encoding='utf-8').write(f"<!doctype html><html><head><meta charset='utf-8'><title>{title}</title><style>{css}</style></head><body>{body}</body></html>")
