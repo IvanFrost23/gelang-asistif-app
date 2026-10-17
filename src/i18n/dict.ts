@@ -102,7 +102,7 @@ const id = {
     version: 'Versi prototipe', team: 'Tim: Ichwan Maulal Hafif, Nadiyya Nur Savira, Hawa Istiqomah, Yoshelyn Shalom P., Ismi Nafisah. Dosen: Ima Kurrotun Ainin, S.Pd., M.Pd.',
   },
   listen: {
-    title: 'Mode Dengar', beta: 'Dalam pengembangan',
+    title: 'Mode Dengar', beta: 'Dalam pengembangan', short: 'Mengenali nama anak dan bunyi penting lewat mikrofon ponsel.',
     betaNote: 'Fitur ini masih dalam pengembangan: pengenalan bisa keliru di tempat ramai dan bekerja paling baik di Chrome pada Android. Gunakan tombol Panggil anak atau Mode demo bila hasilnya belum tepat.',
     status: { idle: 'Tidak aktif', starting: 'Memuat model…', listening: 'Mendengarkan', denied: 'Mikrofon ditolak', unsupported: 'Tidak didukung', error: 'Gagal' },
     start: 'Mulai Dengar', stop: 'Berhenti', waiting: 'Menunggu suara…', loading: 'Pertama kali: mengunduh model pengenalan suara (16 MB), tunggu sebentar.',
@@ -219,7 +219,7 @@ const en: typeof id = {
     version: 'Prototype version', team: 'Team: Ichwan Maulal Hafif, Nadiyya Nur Savira, Hawa Istiqomah, Yoshelyn Shalom P., Ismi Nafisah. Lecturer: Ima Kurrotun Ainin, S.Pd., M.Pd.',
   },
   listen: {
-    title: 'Listen mode', beta: 'In development',
+    title: 'Listen mode', beta: 'In development', short: 'Recognises the child’s name and key sounds through the phone microphone.',
     betaNote: 'This feature is still in development: recognition can be wrong in noisy places and works best in Chrome on Android. Use the Call button or Demo mode if results are not right yet.',
     status: { idle: 'Off', starting: 'Loading model…', listening: 'Listening', denied: 'Mic denied', unsupported: 'Unsupported', error: 'Failed' },
     start: 'Start listening', stop: 'Stop', waiting: 'Waiting for sound…', loading: 'First time: downloading the sound model (16 MB), please wait.',

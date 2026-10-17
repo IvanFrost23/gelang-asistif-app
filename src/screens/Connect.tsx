@@ -31,7 +31,7 @@ export default function Connect() {
   return (
     <Screen title={t.screens.connect} subtitle={t.connect.subtitle}>
       <section className="card hero center">
-        <Bracelet state={state} size={220} />
+        <Bracelet state={state} size={176} />
         <div className={`status ${status}`}><span className="dot" />{t.connect.status[status]}</div>
         {status === 'connected' && <p style={{ marginTop: 6 }}>{FAKE_ID} · {t.connect.battery} 86%</p>}
       </section>

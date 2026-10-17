@@ -236,3 +236,42 @@ a.row:active { transform: scale(.995); background: var(--surface-2); }
 .faq-q { width: 100%; display: flex; justify-content: space-between; align-items: center; gap: 8px; padding: 13px 14px; border: 0; background: transparent; text-align: left; font-weight: 700; font-size: 14px; color: var(--fg); }
 .faq-q span { color: var(--accent-dark); font-size: 18px; }
 .faq p { margin: 0; padding: 0 14px 12px; color: var(--muted); font-size: 14px; line-height: 1.5; }
+
+/* Компактная панель Dengar */
+.info { width: 28px; height: 28px; border-radius: 50%; border: 0; background: var(--accent-soft); color: var(--accent-dark); font-weight: 800; font-size: 13px; font-family: Georgia, serif; font-style: italic; flex: none; transition: background .15s, transform .1s; }
+.info.on { background: var(--accent); color: #fff; }
+.info:active { transform: scale(.92); }
+.compact { margin: 0 0 12px !important; font-size: 13px; line-height: 1.45; }
+.listen-rows { display: flex; flex-direction: column; gap: 6px; margin-bottom: 12px; }
+.lr { display: flex; align-items: center; gap: 8px; font-size: 13px; }
+.lr .dot { width: 9px; height: 9px; box-shadow: none; }
+.lr-k { font-weight: 700; flex: none; }
+.lr-v { color: var(--muted); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+
+/* Анимации интерфейса */
+@media (prefers-reduced-motion: no-preference) {
+  .content > * { animation: fadeUp .38s cubic-bezier(.2,.7,.2,1) both; }
+  .content > *:nth-child(1) { animation-delay: .02s } .content > *:nth-child(2) { animation-delay: .07s }
+  .content > *:nth-child(3) { animation-delay: .12s } .content > *:nth-child(4) { animation-delay: .17s }
+  .content > *:nth-child(5) { animation-delay: .22s } .content > *:nth-child(n+6) { animation-delay: .27s }
+  .list > * { animation: fadeUp .35s cubic-bezier(.2,.7,.2,1) both; }
+  .list > *:nth-child(2) { animation-delay: .05s } .list > *:nth-child(3) { animation-delay: .1s } .list > *:nth-child(4) { animation-delay: .15s }
+  .fade-in { animation: fadeIn .25s ease both; }
+  .toast { animation: toastIn .3s cubic-bezier(.2,.7,.2,1) both; }
+  .bracelet.idle { animation: float 4s ease-in-out infinite; }
+  .bracelet.idle .led-glow { animation: breathe 3s ease-in-out infinite; }
+  .header h1 { animation: fadeIn .3s ease both; }
+  .nav a svg { transition: transform .2s cubic-bezier(.2,.7,.2,1); }
+  .nav a:active svg { transform: scale(.85); }
+  .row, .card, .signal-btn, .btn, .chip { transition: transform .12s cubic-bezier(.2,.7,.2,1), box-shadow .15s, background .15s, border-color .15s; }
+  .seg button, .lang button { transition: background .18s, color .18s, box-shadow .18s, transform .1s; }
+  .seg button:active, .lang button:active { transform: scale(.96); }
+  .switch::after { transition: left .2s cubic-bezier(.2,.7,.2,1), width .15s; }
+  .switch:active::after { width: 28px; }
+  .switch.on:active::after { left: 19px; }
+}
+@keyframes fadeUp { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+@keyframes toastIn { from { opacity: 0; transform: translate(-50%, 10px); } to { opacity: 1; transform: translate(-50%, 0); } }
+@keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-4px); } }
+@keyframes breathe { 0%, 100% { opacity: .2; } 50% { opacity: .5; } }
