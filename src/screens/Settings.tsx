@@ -1,4 +1,6 @@
+import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { getTheme, setTheme, type Theme } from '../theme'
 import Screen from '../components/Screen'
 import { CATEGORIES, SIGNALS } from '../domain/signals'
 import { useT } from '../i18n'
@@ -11,6 +13,9 @@ export default function Settings() {
   const { t } = useT()
   const nav = useNavigate()
   const { settings, setEnabled, setSensitivity, user, signOut } = useStore()
+  const [theme, setThemeState] = useState<Theme>(getTheme)
+  const pickTheme = (t: Theme) => { setTheme(t); setThemeState(t) }
+  const themes: { v: Theme; label: string }[] = [{ v: 'auto', label: t.settingsFull.themeAuto }, { v: 'light', label: t.settingsFull.themeLight }, { v: 'dark', label: t.settingsFull.themeDark }]
   const sens: { v: Sensitivity; label: string }[] = [
     { v: 'low', label: t.settingsFull.sensLow }, { v: 'medium', label: t.settingsFull.sensMedium }, { v: 'high', label: t.settingsFull.sensHigh },
   ]
@@ -39,6 +44,12 @@ export default function Settings() {
           {sens.map((s) => <button key={s.v} className={settings.sensitivity === s.v ? 'on' : ''} onClick={() => setSensitivity(s.v)}>{s.label}</button>)}
         </div>
         <p style={{ marginTop: 10 }}>{t.settingsFull.sensHint}</p>
+      </section>
+      <section className="card">
+        <h2>{t.settingsFull.theme}</h2>
+        <div className="seg">
+          {themes.map((x) => <button key={x.v} className={theme === x.v ? 'on' : ''} onClick={() => pickTheme(x.v)}>{x.label}</button>)}
+        </div>
       </section>
       <p className="hint">{t.settingsFull.saved}</p>
 

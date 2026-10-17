@@ -57,6 +57,7 @@ const id = {
     sensitivity: 'Kepekaan pengenalan', sensLow: 'Rendah', sensMedium: 'Sedang', sensHigh: 'Tinggi',
     sensHint: 'Rendah: lebih sedikit salah deteksi di tempat ramai. Tinggi: lebih sedikit suara terlewat.',
     dangerLocked: 'Kategori bahaya selalu aktif demi keselamatan anak.', saved: 'Pengaturan tersimpan otomatis', account: 'Akun',
+    theme: 'Tampilan', themeAuto: 'Otomatis', themeLight: 'Terang', themeDark: 'Gelap',
   },
   homeFull: { noProfile: 'Belum ada profil anak', createProfile: 'Buat profil anak', signInFirst: 'Masuk untuk mulai', lastEvent: 'Terakhir', noEvents: 'Belum ada suara terdeteksi' },
   historyFull: {
@@ -173,6 +174,7 @@ const en: typeof id = {
     sensitivity: 'Recognition sensitivity', sensLow: 'Low', sensMedium: 'Medium', sensHigh: 'High',
     sensHint: 'Low: fewer false alerts in noisy places. High: fewer missed sounds.',
     dangerLocked: "The danger category is always on for the child's safety.", saved: 'Settings are saved automatically', account: 'Account',
+    theme: 'Appearance', themeAuto: 'Auto', themeLight: 'Light', themeDark: 'Dark',
   },
   homeFull: { noProfile: 'No child profile yet', createProfile: 'Create child profile', signInFirst: 'Sign in to start', lastEvent: 'Last', noEvents: 'No sounds detected yet' },
   historyFull: {
