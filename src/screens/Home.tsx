@@ -10,6 +10,8 @@ import { sayName } from '../audio/demoSounds'
 import { useActiveProfile, useStore } from '../store'
 import { SIGNALS } from '../domain/signals'
 import Simulator from '../components/Simulator'
+import { APK_URL } from '../app/links'
+import { ChevronIcon } from '../components/Icons'
 import ListenPanel from '../components/ListenPanel'
 
 export default function Home() {
@@ -61,6 +63,13 @@ export default function Home() {
         <MenuRow to={routes.connect} title={t.home.connect} sub={t.home.connectSub} />
         <MenuRow to={routes.training} title={t.home.training} sub={t.home.trainingSub} />
         <MenuRow to={routes.guidebook} title={t.home.guidebook} sub={t.home.guidebookSub} />
+        {!(window as unknown as { Capacitor?: unknown }).Capacitor && (
+          <a href={APK_URL} className="row download">
+            <span className="dl-icon">⬇</span>
+            <span className="grow"><div className="title">{t.helpFull.download}</div><div className="sub">{t.helpFull.downloadSub}</div></span>
+            <span className="chev"><ChevronIcon size={20} /></span>
+          </a>
+        )}
       </div>
     </Screen>
   )

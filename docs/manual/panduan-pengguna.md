@@ -162,7 +162,7 @@ Tab **Bantuan** berisi tautan ke **Buku panduan**, pertanyaan umum, dan informas
 
 ## 15. Memasang berkas APK (Android)
 
-1. Unduh **https://gelang-asistif-3023.web.app/gelang-asistif.apk** langsung di ponsel, atau salin berkas `gelang-asistif.apk` lewat kabel / WhatsApp / Google Drive, lalu buka.
+1. Unduh lewat tombol **Unduh aplikasi Android (APK)** di tab Bantuan atau di Beranda versi web (tautan: https://github.com/IvanFrost23/gelang-asistif-releases/releases/latest/download/gelang-asistif.apk), atau salin berkas `gelang-asistif.apk` lewat kabel / WhatsApp / Google Drive, lalu buka.
 2. Jika Android meminta, izinkan **Pasang dari sumber tidak dikenal** untuk aplikasi yang membukanya.
 3. Setelah terpasang, buka **Gelang Asistif** dari layar utama dan izinkan mikrofon saat diminta.
 
