@@ -34,9 +34,12 @@ export function Explorer() {
     c.enableZoom = false
     if (coarse()) { c.enabled = false; canvas.style.touchAction = 'pan-y' }
     let down: { x: number; y: number; t: number } | null = null
-    const onDown = (e: PointerEvent) => { down = { x: e.clientX, y: e.clientY, t: performance.now() }; if (!coarse()) c.enableZoom = true }
+    let pinchedAt = 0
+    // Колесо мыши зумит модель только после клика по ней, до ухода курсора; иначе колесо листает страницу
+    let armed = false
+    const onDown = (e: PointerEvent) => { down = { x: e.clientX, y: e.clientY, t: performance.now() }; if (!coarse()) { armed = true; c.enableZoom = true } }
     const onUp = (e: PointerEvent) => {
-      if (!down) return
+      if (!down || performance.now() - pinchedAt < 400) { down = null; return }
       const moved = Math.hypot(e.clientX - down.x, e.clientY - down.y)
       const quick = performance.now() - down.t < 450
       down = null
@@ -44,14 +47,48 @@ export function Explorer() {
       const part = engine.pick(view, e.clientX, e.clientY)
       if (part) { setSelected(part); view.focus(part) }
     }
-    const onLeave = () => { if (!coarse()) c.enableZoom = false }
+    const onLeave = () => { if (!coarse()) { armed = false; c.enableZoom = false } }
+    // Щипок тачпада (ctrl+колесо) над моделью приближает её сразу, без клика: зум включается только на это событие
+    const onWheel = (e: WheelEvent) => {
+      if (!e.ctrlKey || coarse()) return
+      c.enableZoom = true
+      setTimeout(() => { c.enableZoom = armed }, 0)
+    }
+    // На телефоне щипок двумя пальцами приближает модель и до нажатия «Ketuk untuk menjelajah»;
+    // после него щипком управляет OrbitControls
+    let pinch = 0
+    const span = (t: TouchList) => Math.hypot(t[0].clientX - t[1].clientX, t[0].clientY - t[1].clientY)
+    const onTouchStart = (e: TouchEvent) => {
+      if (c.enabled || e.touches.length !== 2) return
+      e.preventDefault()
+      pinch = span(e.touches)
+    }
+    const onTouchMove = (e: TouchEvent) => {
+      if (c.enabled || e.touches.length !== 2) return
+      e.preventDefault()
+      const d = span(e.touches)
+      if (pinch > 0 && d > 0) view.dolly(pinch / d)
+      pinch = d
+      pinchedAt = performance.now()
+    }
+    const onTouchEnd = (e: TouchEvent) => { if (e.touches.length < 2) pinch = 0 }
     canvas.addEventListener('pointerdown', onDown)
     canvas.addEventListener('pointerup', onUp)
     canvas.addEventListener('pointerleave', onLeave)
+    canvas.addEventListener('wheel', onWheel, { capture: true })
+    canvas.addEventListener('touchstart', onTouchStart, { passive: false })
+    canvas.addEventListener('touchmove', onTouchMove, { passive: false })
+    canvas.addEventListener('touchend', onTouchEnd)
+    canvas.addEventListener('touchcancel', onTouchEnd)
     return () => {
       canvas.removeEventListener('pointerdown', onDown)
       canvas.removeEventListener('pointerup', onUp)
       canvas.removeEventListener('pointerleave', onLeave)
+      canvas.removeEventListener('wheel', onWheel, { capture: true })
+      canvas.removeEventListener('touchstart', onTouchStart)
+      canvas.removeEventListener('touchmove', onTouchMove)
+      canvas.removeEventListener('touchend', onTouchEnd)
+      canvas.removeEventListener('touchcancel', onTouchEnd)
       view.detach()
     }
   }, [view])

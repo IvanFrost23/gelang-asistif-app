@@ -201,6 +201,17 @@ export class ExplorerView extends Base {
     else { const { pos, target } = this.defaultCam(); this.flyTo(pos, target) }
   }
 
+  /** Мгновенный зум без анимации, для щипка: factor < 1 приближает. */
+  dolly(factor: number) {
+    const c = this.controls
+    if (!c) return
+    this.tween = null
+    c.autoRotate = false
+    const off = this.camera.position.clone().sub(c.target)
+    const len = THREE.MathUtils.clamp(off.length() * factor, c.minDistance, c.maxDistance)
+    this.camera.position.copy(c.target).add(off.setLength(len))
+  }
+
   zoom(factor: number) {
     if (!this.controls) return
     const tgt = this.controls.target.clone()

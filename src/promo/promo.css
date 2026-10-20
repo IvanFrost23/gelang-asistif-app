@@ -18,9 +18,10 @@
 }
 
 * { box-sizing: border-box; }
-html { background: var(--bg); scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+/* Без масштабирования страницы: щипок и двойной тап отключены, прокрутка работает. Зум есть только у 3D-модели */
+html { background: var(--bg); scroll-behavior: smooth; -webkit-text-size-adjust: 100%; text-size-adjust: 100%; touch-action: pan-x pan-y; }
 body {
-  margin: 0; background: var(--bg); color: var(--fg);
+  margin: 0; touch-action: manipulation; -webkit-tap-highlight-color: transparent; background: var(--bg); color: var(--fg);
   font: 400 17px/1.55 'Plus Jakarta Sans', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
   -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;
 }
