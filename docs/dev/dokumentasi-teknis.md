@@ -1,6 +1,6 @@
 # Техническая документация: приложение Gelang Asistif
 
-Версия 1.3, 17 октября 2026. Репозиторий: https://github.com/IvanFrost23/gelang-asistif-app. Сайт: https://gelang-asistif-3023.web.app. Документ описывает реализованное приложение после всех 12 шагов плана.
+Версия 1.4, 19 октября 2026. Репозиторий: https://github.com/IvanFrost23/gelang-asistif-app. Сайт: https://gelang-asistif-3023.web.app. Промо-страница: https://gelang-asistif-3023.web.app/gelang/. Документ описывает реализованное приложение после всех 12 шагов плана и промо-страницу браслета.
 
 ## 1. Назначение и границы
 
@@ -27,6 +27,7 @@
 | Звук | Web Audio API, SpeechSynthesis | демо-звуки без файлов, имя голосом |
 | Нативная сборка | Capacitor 6, Android | APK из того же dist/ |
 | Шрифт | Plus Jakarta Sans (Google Fonts) | |
+| 3D на промо-странице | three.js 0.186 | процедурная модель, без внешних 3D-файлов |
 
 ## 3. Структура проекта
 
@@ -35,7 +36,9 @@ projectT/
   docs/                   книга проекта, карточка, схема, скриншоты, руководства
   public/yamnet/          модель YAMNet (model.json + 4 шарда, 16 МБ)
   public/manifest.webmanifest, icon-*.png   PWA
-  scripts/                build-docs.sh (PDF), screenshots.mjs, seed.mjs
+  scripts/                build-docs.sh (PDF), screenshots.mjs, seed.mjs, promo-assets.mjs
+  gelang/index.html       вторая точка входа Vite: промо-страница /gelang/
+  public/gelang/          og.png (превью для соцсетей), bracelet.png (рендер без WebGL)
   src/
     app/routes.ts         все пути приложения
     domain/signals.ts     четыре кода: цвет, мигание, паттерн вибрации, повтор, alwaysOn
@@ -48,6 +51,8 @@ projectT/
     audio/demoSounds.ts   синтез звуков: звонок, сирена, дверной звонок, имя голосом
     theme.ts              тёмная/светлая тема
     components/           Screen, BottomNav, LangSwitch, Bracelet (SVG), SignalButtons, Simulator, ListenPanel, MenuRow, Toast, Icons
+    promo/                промо-страница: App, Codes, Inside, Explorer, Stage, i18n.tsx, promo.css
+    promo/three/          geometry.ts, bracelet.ts (модель), engine.ts (рендерер), views.ts (сцены)
   android/                проект Capacitor (генерируется, собирается gradlew)
   capacitor.config.ts     appId id.ac.unesa.gelangasistif, webDir dist
     screens/              Home, Login, Profile, Connect, Settings, Training, History, Guidebook, Help
@@ -127,6 +132,18 @@ home:   { color: '#22c55e', blink: false, pattern: [120, 90, 120, 90, 120],   re
 
 `Flash.tsx` подписан на конвейер и заливает экран цветом кода с иконкой и фразой из guidebook на 1.5 с (2.6 с с миганием для опасности). `Quiz.tsx` («Tebak kode»): 5 раундов, случайный код проигрывается на браслете, четыре варианта с иконками, звёзды и рекорд в `quizResults`/`quizBest`.
 
+## 7c. Промо-страница /gelang/
+
+Отдельная страница-презентация браслета. Собирается той же сборкой Vite как вторая точка входа (`rollupOptions.input` в `vite.config.ts`), отдаётся Firebase Hosting как статический `dist/gelang/index.html`: статический файл имеет приоритет над SPA-перезаписью на `/index.html`. Язык ID/EN общий с приложением (ключ `gelang-asistif:lang`), параметр `?lang=en` его перекрывает. Коды, цвета и паттерны берутся из `src/domain/signals.ts`, как в приложении.
+
+**Модель.** `bracelet.ts` строит браслет кодом по карточке прототипа и таблице 5 книги. Ремешок: сечение-сквиркл протянуто вдоль эллипса (`sweep`), хвост выходит из-под пряжки и лежит поверх, у него скруглённый кончик, отверстия, шлёвка и металлическая рамка с язычком. Корпус: пластины-«стадионы» (`stadiumSlab`) изогнуты по радиусу кривизны эллипса (`bend`): силиконовая рамка, металлический ободок, чёрное стекло, светящаяся полоса LED, кнопка, отверстие микрофона. Внутри пять слоёв для разборки: стекло, гибкая плата (RGB-светодиод, тактовая кнопка, MEMS-микрофон), плата ESP32 под экраном с маркировкой, батарея Li-Po и монетный мотор с проводами, задняя крышка с контактами зарядки. Микрофон в браслете помечен как план развития, как в книге. Метод `setExplode(0..1)` разводит слои, `setLed` красит полосу, свечение-спрайты и точечный свет, `setShake` трясёт корпус в фазах вибрации, `setHighlight` подсвечивает выбранную деталь. У каждой детали есть якорь с нормалью для подписей.
+
+**Рендер.** `engine.ts` держит один WebGLRenderer на страницу. Каждая секция с 3D — это вид (`View`) со своим 2D-холстом и камерой: кадр рендерится в общий буфер и копируется `drawImage` в холст секции. Так холсты прокручиваются вместе со страницей без отставания на телефонах, а модель и контекст WebGL создаются один раз. Рендерятся только виды, видимые на экране (IntersectionObserver). Освещение: RoomEnvironment через PMREM плюс два направленных света, тон-маппинг Neutral.
+
+**Виды** (`views.ts`): `HeroView` (браслет парит, следует за курсором, по очереди проигрывает коды), `CodesView` (проигрывает активный код по `codeFrame`), `InsideView` (разборка по прогрессу прокрутки, подписи деталей), `ExplorerView` (OrbitControls, полёт камеры к детали, зум кнопками, разборка, проигрывание кода). На сенсорных экранах вращение включается кнопкой «Ketuk untuk menjelajah», иначе холст перехватывал бы прокрутку; на десктопе зум колесом работает только после клика по модели.
+
+**Сборка.** Хелпер CommonJS вынесен в чанк `react`, иначе общий чанк импортировал его из `tf` и обе страницы грузили TensorFlow сразу. Промо-страница грузит `react`, `three` и свой код, примерно 210 КБ в gzip. Если WebGL недоступен, вместо холста показывается `public/gelang/bracelet.png`. Превью и запасной рендер снимаются `node scripts/promo-assets.mjs [baseUrl]` при работающем dev-сервере.
+
 ## 8. Хранение и Firebase
 
 Локально: zustand persist, ключ `gelang-asistif`, версия 1. Хранятся user (email, uid, mode local|cloud), profiles, activeProfileId, settings, bracelet, history.
@@ -147,7 +164,7 @@ firebase deploy --only firestore:rules    # правила
 node scripts/screenshots.mjs [baseUrl]    # 15 скриншотов в docs/screens/
 ```
 
-Чанки сборки: index ~230 КБ, firebase ~440 КБ, tf ~1.9 МБ (ленивый). Модель и ассеты отдаются с кэшем на год.
+Чанки сборки: main ~110 КБ, react ~145 КБ, firebase ~440 КБ, tf ~1.9 МБ (ленивый, грузится только при запуске Dengar), three ~580 КБ (только промо-страница). Модель и ассеты отдаются с кэшем на год.
 
 **APK.** Capacitor оборачивает тот же `dist/` в WebView:
 
