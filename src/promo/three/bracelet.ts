@@ -378,11 +378,12 @@ export function buildBracelet(): BraceletModel {
     else if (owner !== m.userData.part) m.material = m.material.clone()
   }
 
+  // Лёгкое плавное дрожание вдоль ремешка: 12 Гц, амплитуда 0.12 мм (меньше пикселя на экране).
+  // Резкая тряска по трём осям с поворотом укачивала, вибрацию и так видно по LED.
   const setShake = (amount: number, time: number) => {
-    if (amount <= 0) { body.position.set(0, 0, 0); body.rotation.set(0, 0, 0); return }
-    const f = time * 0.001
-    body.position.set(Math.sin(f * 190) * 0.45 * amount, Math.sin(f * 233 + 1) * 0.35 * amount, Math.sin(f * 171 + 2) * 0.3 * amount)
-    body.rotation.z = Math.sin(f * 211) * 0.012 * amount
+    body.rotation.set(0, 0, 0)
+    if (amount <= 0) { body.position.set(0, 0, 0); return }
+    body.position.set(Math.sin(time * 0.001 * Math.PI * 2 * 12) * 0.12 * amount, 0, 0)
   }
 
   setLed('#a99cf2', 0.4)

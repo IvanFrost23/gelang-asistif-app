@@ -73,7 +73,7 @@ export class HeroView extends Base {
       const cat = CATEGORIES[Math.floor(ms / slot) % 4]
       const f = codeFrame(cat, ms % slot, { once: true, gap: 4000 })
       ledFor(m, cat, f)
-      m.setShake(f.vib && !still ? 1 : 0, t)
+      m.setShake(0, t)
     }
     this.camera.fov = 24
     this.camera.aspect = this.aspect()
@@ -99,7 +99,7 @@ export class CodesView extends Base {
     m.setHighlight(null, 0)
     const f = codeFrame(this.cat, Math.max(0, t - this.start - 350))
     ledFor(m, this.cat, f, 0.2)
-    m.setShake(f.vib && !still ? 1.1 : 0, t)
+    m.setShake(f.vib && !still ? 1 : 0, t)
     this.camera.fov = 26
     this.camera.aspect = this.aspect()
     const d = fitDistance(this.camera, 82, 70)
