@@ -55,7 +55,8 @@ export function Explorer() {
       setTimeout(() => { c.enableZoom = armed }, 0)
     }
     // На телефоне щипок двумя пальцами приближает модель и до нажатия «Ketuk untuk menjelajah»;
-    // после него щипком управляет OrbitControls
+    // после него щипком управляет OrbitControls. Слушаем весь контейнер, чтобы щипок работал и с пальцем на точке детали
+    const area = canvas.parentElement ?? canvas
     let pinch = 0
     const span = (t: TouchList) => Math.hypot(t[0].clientX - t[1].clientX, t[0].clientY - t[1].clientY)
     const onTouchStart = (e: TouchEvent) => {
@@ -76,19 +77,19 @@ export function Explorer() {
     canvas.addEventListener('pointerup', onUp)
     canvas.addEventListener('pointerleave', onLeave)
     canvas.addEventListener('wheel', onWheel, { capture: true })
-    canvas.addEventListener('touchstart', onTouchStart, { passive: false })
-    canvas.addEventListener('touchmove', onTouchMove, { passive: false })
-    canvas.addEventListener('touchend', onTouchEnd)
-    canvas.addEventListener('touchcancel', onTouchEnd)
+    area.addEventListener('touchstart', onTouchStart, { passive: false })
+    area.addEventListener('touchmove', onTouchMove, { passive: false })
+    area.addEventListener('touchend', onTouchEnd)
+    area.addEventListener('touchcancel', onTouchEnd)
     return () => {
       canvas.removeEventListener('pointerdown', onDown)
       canvas.removeEventListener('pointerup', onUp)
       canvas.removeEventListener('pointerleave', onLeave)
       canvas.removeEventListener('wheel', onWheel, { capture: true })
-      canvas.removeEventListener('touchstart', onTouchStart)
-      canvas.removeEventListener('touchmove', onTouchMove)
-      canvas.removeEventListener('touchend', onTouchEnd)
-      canvas.removeEventListener('touchcancel', onTouchEnd)
+      area.removeEventListener('touchstart', onTouchStart)
+      area.removeEventListener('touchmove', onTouchMove)
+      area.removeEventListener('touchend', onTouchEnd)
+      area.removeEventListener('touchcancel', onTouchEnd)
       view.detach()
     }
   }, [view])
